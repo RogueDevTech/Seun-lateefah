@@ -434,18 +434,17 @@
     justify-content: flex-end;
   }
   .mobileMenu {
-    width: 75vw;
+    width: 80vw;
     max-width: 320px;
     height: 100vh;
-    background: linear-gradient(135deg, #fffbe7 60%, #f9d29d 100%);
-    box-shadow: -4px 0 32px rgba(0, 0, 0, 0.1);
+    background: rgb(0, 0, 0);
     padding: 2.5rem 1.5rem 1.5rem 1.5rem;
     position: relative;
     display: flex;
     flex-direction: column;
     align-items: flex-end;
-    border-top-left-radius: 32px;
-    border-bottom-left-radius: 32px;
+    border-top-left-radius: 12px;
+    border-bottom-left-radius: 12px;
     animation: menuGlow 2s infinite alternate;
   }
   @keyframes menuGlow {
@@ -479,24 +478,19 @@
       font-family: var(--font-playfair-display), serif;
       font-size: 1.3rem;
       font-weight: 700;
-      color: #2c3e50;
+      color: #ffffff;
       text-decoration: none;
       letter-spacing: 1.2px;
       padding: 0.2rem 0.7rem;
       border-radius: 12px;
-      background: linear-gradient(90deg, #fffbe7 80%, #f9d29d 100%);
+      width: 100%;
+      display: block;
       box-shadow: 0 2px 8px #f9d29d22;
       transition: background 0.2s, color 0.2s;
-      &:active,
-      &:focus,
-      &:hover {
-        background: #f9d29d;
-        color: #000000;
-      }
     }
   }
   .heroSection {
-    height: 85vh;
+    height: 75vh;
     // outline: 2px solid red;
     .scrollContainer {
       .scrollImage {

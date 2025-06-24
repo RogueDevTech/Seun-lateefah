@@ -178,14 +178,12 @@
 
 // Gallery Section
 .gallerySection {
-  padding: 4rem 0;
-  background: #f8f9fa;
+  padding: 3rem 0;
 
   .galleryGrid {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     gap: 1.5rem;
-    grid-auto-rows: 250px;
 
     .galleryItem {
       cursor: pointer;
@@ -193,6 +191,7 @@
       overflow: hidden;
       position: relative;
       transition: all 0.3s ease;
+      min-height: 350px;
 
       &:hover {
         transform: scale(1.02);
@@ -354,7 +353,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 2rem;
+  padding: 1rem;
 
   .lightboxContent {
     position: relative;
@@ -393,10 +392,10 @@
       background: rgba(0, 0, 0, 0.5);
       color: white;
       border: none;
-      width: 50px;
-      height: 50px;
+      width: 40px;
+      height: 40px;
       border-radius: 50%;
-      font-size: 1.5rem;
+      font-size: 1.2rem;
       cursor: pointer;
       z-index: 10;
       transition: all 0.3s ease;
@@ -407,11 +406,11 @@
       }
 
       &.prevButton {
-        left: 1rem;
+        left: 0.5rem;
       }
 
       &.nextButton {
-        right: 1rem;
+        right: 0.5rem;
       }
     }
 
@@ -419,8 +418,8 @@
       .imageDisplay {
         width: 100vw;
         max-width: 100vw;
-        height: 80vh;
-        max-height: 80vh;
+        height: 50vh;
+        max-height: 50vh;
         background-size: contain;
         background-position: center;
         background-repeat: no-repeat;
@@ -431,28 +430,27 @@
       .videoDisplay {
         width: 100vw;
         max-width: 100vw;
-        height: 80vh;
-        max-height: 80vh;
+        height: 50vh;
+        max-height: 50vh;
         object-fit: contain;
         background-color: #000000;
         margin: 0 auto;
       }
 
       .imageCaption {
-        padding: 2rem;
+        padding: 1rem;
         text-align: center;
         background: white;
 
         h3 {
-          font-family: "Playfair Display", serif;
-          font-size: 1.5rem;
+          font-size: 1.2rem;
           font-weight: 600;
           color: #2c3e50;
           margin-bottom: 0.5rem;
         }
 
         p {
-          font-size: 1rem;
+          font-size: 0.9rem;
           color: #7f8c8d;
           text-transform: uppercase;
           letter-spacing: 0.5px;
@@ -465,7 +463,7 @@
 
 // CTA Section
 .ctaSection {
-  padding: 6rem 0;
+  padding: 4rem 0;
   background-color: #000000;
   color: white;
   text-align: center;
@@ -476,14 +474,14 @@
 
     h2 {
       font-family: "Playfair Display", serif;
-      font-size: 3rem;
+      font-size: 2.5rem;
       font-weight: 700;
       margin-bottom: 1rem;
       text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
     }
 
     p {
-      font-size: 1.2rem;
+      font-size: 1.1rem;
       line-height: 1.6;
       margin-bottom: 2rem;
       text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
@@ -515,20 +513,20 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  min-height: 400px;
-  padding: 4rem 0;
+  min-height: 300px;
+  padding: 2rem 0;
 
   .comingSoonContent {
     text-align: center;
     max-width: 500px;
-    padding: 3rem;
+    padding: 2rem;
     background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
     border-radius: 20px;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
     border: 2px solid #dee2e6;
 
     h2 {
-      font-size: 2.5rem;
+      font-size: 2rem;
       font-weight: 600;
       margin-bottom: 1rem;
       color: #495057;
@@ -536,7 +534,7 @@
     }
 
     p {
-      font-size: 1.1rem;
+      font-size: 1rem;
       color: #6c757d;
       margin-bottom: 2rem;
       line-height: 1.6;
@@ -544,7 +542,7 @@
     }
 
     .comingSoonIcon {
-      font-size: 4rem;
+      font-size: 3rem;
       margin-top: 1rem;
       animation: pulse 2s infinite;
     }
@@ -603,76 +601,26 @@
     padding: 2rem 0;
 
     .filterButtons {
-      gap: 0.5rem;
+      flex-wrap: wrap;
+      gap: 1rem;
 
       .filterButton {
-        padding: 0.6rem 1rem;
-        font-size: 0.8rem;
+        padding: 0.6rem 1.2rem;
+        font-size: 0.9rem;
       }
     }
   }
 
   .gallerySection {
-    padding: 2rem 0;
+    padding: 3rem 0;
 
     .galleryGrid {
-      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-      gap: 1rem;
-      grid-auto-rows: 200px;
-
-      .galleryItem {
-        .imageOverlay {
-          padding: 1rem;
-
-          .imageInfo {
-            h3 {
-              font-size: 1rem;
-            }
-
-            p {
-              font-size: 0.8rem;
-            }
-          }
-        }
-      }
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1.5rem;
     }
-  }
 
-  .lightbox {
-    padding: 1rem;
-
-    .lightboxContent {
-      .navButton {
-        width: 40px;
-        height: 40px;
-        font-size: 1.2rem;
-
-        &.prevButton {
-          left: 0.5rem;
-        }
-
-        &.nextButton {
-          right: 0.5rem;
-        }
-      }
-
-      .lightboxImage {
-        .imageDisplay {
-          height: 50vh;
-        }
-
-        .imageCaption {
-          padding: 1rem;
-
-          h3 {
-            font-size: 1.2rem;
-          }
-
-          p {
-            font-size: 0.9rem;
-          }
-        }
-      }
+    .galleryItem {
+      min-height: 350px;
     }
   }
 
@@ -686,28 +634,6 @@
 
       p {
         font-size: 1.1rem;
-      }
-    }
-  }
-
-  .comingSoon {
-    min-height: 300px;
-    padding: 2rem 0;
-
-    .comingSoonContent {
-      padding: 2rem;
-      margin: 0 1rem;
-
-      h2 {
-        font-size: 2rem;
-      }
-
-      p {
-        font-size: 1rem;
-      }
-
-      .comingSoonIcon {
-        font-size: 3rem;
       }
     }
   }

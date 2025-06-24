@@ -18,9 +18,12 @@ export default function MobileMenu() {
 
   return (
     <>
-      {/* Hamburger menu button (mobile only) */}
-      <button className={styles.menuButton} onClick={() => setMenuOpen(true)}>
-        <FiMenu size={32} />
+      {/* Hamburger/Cancel menu button (mobile only) */}
+      <button
+        className={styles.menuButton}
+        onClick={() => setMenuOpen(!menuOpen)}
+      >
+        {menuOpen ? <FiX size={32} /> : <FiMenu size={32} />}
       </button>
       {/* Animated mobile menu */}
       <AnimatePresence>
