@@ -46,10 +46,10 @@ const bridesmaids = [
 const groomsmen = [
   {
     id: 1,
-    name: "Michael Thompson",
-    role: "Best Man",
+    name: "Tosin Yusuf",
+    role: "Groomsman",
     image:
-      "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=687&q=80",
+      "https://res.cloudinary.com/dwozuizmv/image/upload/v1750772875/WhatsApp_Image_2025-06-24_at_2.34.20_PM_x1iums.jpg",
     relationship: "Brother of the Groom",
     description: "My brother and partner in crime since day one.",
   },
@@ -60,7 +60,7 @@ const groomsmen = [
     image:
       "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80",
     relationship: "College Friend",
-    description: "The friend who introduced me to the love of my life.",
+    description: "",
   },
   {
     id: 3,

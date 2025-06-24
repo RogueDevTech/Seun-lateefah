@@ -210,22 +210,91 @@
       }
 
       .imageContainer {
+        position: relative;
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+        border-radius: 12px;
+        cursor: pointer;
+        transition: transform 0.3s ease;
+
+        &:hover {
+          transform: scale(1.02);
+        }
+      }
+
+      .imageBackground {
         width: 100%;
         height: 100%;
         background-size: cover;
         background-position: center;
         background-repeat: no-repeat;
-        background-color: #e0e0e0;
-        position: relative;
+      }
 
-        &::before {
-          content: "📸";
-          position: absolute;
-          top: 50%;
-          left: 50%;
-          transform: translate(-50%, -50%);
-          font-size: 3rem;
-          opacity: 0.3;
+      .videoThumbnail {
+        width: 100%;
+        height: 100%;
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        border-radius: 12px;
+      }
+
+      .videoThumbnailPlaceholder {
+        width: 100%;
+        height: 100%;
+        background: #f0f0f0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 12px;
+        color: #666;
+        font-family: var(--font-poppins);
+      }
+
+      .hiddenVideo {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        opacity: 0;
+        pointer-events: none;
+      }
+
+      .videoContainer {
+        position: relative;
+        width: 100%;
+        height: 100%;
+        border-radius: 12px;
+        overflow: hidden;
+      }
+
+      .playButton {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        background: rgba(0, 0, 0, 0.7);
+        color: white;
+        width: 60px;
+        height: 60px;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 1.5rem;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        z-index: 2;
+
+        span {
+          margin-left: 3px;
+        }
+
+        &:hover {
+          background: rgba(0, 0, 0, 0.9);
+          transform: translate(-50%, -50%) scale(1.1);
         }
       }
 
@@ -241,36 +310,33 @@
           rgba(0, 0, 0, 0.3) 50%,
           rgba(0, 0, 0, 0.7) 100%
         );
-        opacity: 0;
-        transition: opacity 0.3s ease;
         display: flex;
         align-items: flex-end;
         padding: 1.5rem;
-
-        .imageInfo {
-          color: white;
-          text-align: left;
-
-          h3 {
-            font-family: "Playfair Display", serif;
-            font-size: 1.2rem;
-            font-weight: 600;
-            margin-bottom: 0.5rem;
-            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
-          }
-
-          p {
-            font-size: 0.9rem;
-            font-weight: 400;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
-          }
-        }
+        opacity: 0;
+        transition: opacity 0.3s ease;
       }
 
-      &:hover .imageOverlay {
+      .galleryItem:hover .imageOverlay {
         opacity: 1;
+      }
+
+      .imageInfo {
+        color: white;
+        width: 100%;
+
+        h3 {
+          font-size: 1.2rem;
+          font-weight: 600;
+          margin-bottom: 0.5rem;
+          font-family: var(--font-great-vibes);
+        }
+
+        p {
+          font-size: 0.9rem;
+          opacity: 0.9;
+          font-family: var(--font-poppins);
+        }
       }
     }
   }
@@ -359,6 +425,16 @@
         background-position: center;
         background-repeat: no-repeat;
         background-color: #f8f9fa;
+        margin: 0 auto;
+      }
+
+      .videoDisplay {
+        width: 100vw;
+        max-width: 100vw;
+        height: 80vh;
+        max-height: 80vh;
+        object-fit: contain;
+        background-color: #000000;
         margin: 0 auto;
       }
 
@@ -569,6 +645,13 @@
 
   .lightboxImage {
     .imageDisplay {
+      width: 100vw;
+      max-width: 100vw;
+      height: 50vh;
+      max-height: 50vh;
+    }
+
+    .videoDisplay {
       width: 100vw;
       max-width: 100vw;
       height: 50vh;

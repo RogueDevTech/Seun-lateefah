@@ -1,19 +1,11 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useRef, useEffect } from "react";
 import Link from "next/link";
 import { motion, AnimatePresence } from "framer-motion";
 import styles from "./page.module.scss";
 
 const galleryImages = [
-  {
-    id: 2,
-    src: "https://images.unsplash.com/photo-1511285560929-80b456fea0bc?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2069&q=80",
-    alt: "First Date",
-    category: "dating",
-    width: 2,
-    height: 1,
-  },
   {
     id: 3,
     src: "https://images.unsplash.com/photo-1519225421980-715cb0215aed?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80",
@@ -44,6 +36,15 @@ const galleryImages = [
     alt: "Wedding Planning",
     category: "wedding",
     width: 2,
+    height: 1,
+  },
+
+  {
+    id: 2,
+    src: "https://res.cloudinary.com/dwozuizmv/image/upload/v1750772000/WhatsApp_Image_2025-06-24_at_2.27.06_PM_1_v0cgho.jpg",
+    alt: "",
+    category: "dating",
+    width: 1,
     height: 1,
   },
   {
@@ -80,18 +81,18 @@ const galleryImages = [
   },
   {
     id: 10,
-    src: "https://images.unsplash.com/photo-1511285560929-80b456fea0bc?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2069&q=80",
-    alt: "Bachelor Party",
+    src: "https://res.cloudinary.com/dwozuizmv/image/upload/v1750772003/WhatsApp_Image_2025-06-24_at_2.27.05_PM_1_zsxxao.jpg",
+    alt: "",
     category: "celebration",
     width: 1,
     height: 1,
   },
   {
     id: 11,
-    src: "https://images.unsplash.com/photo-1519741497674-611481863552?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80",
-    alt: "Bachelorette Party",
+    src: "https://res.cloudinary.com/dwozuizmv/image/upload/v1750772003/WhatsApp_Image_2025-06-24_at_2.27.06_PM_z8oc1e.jpg",
+    alt: "",
     category: "celebration",
-    width: 2,
+    width: 1,
     height: 1,
   },
   {
@@ -127,6 +128,75 @@ const galleryImages = [
     width: 1,
     height: 1,
   },
+  {
+    id: 16,
+    src: "https://res.cloudinary.com/dwozuizmv/image/upload/v1750772000/WhatsApp_Image_2025-06-24_at_2.26.31_PM_ndth5b.jpg",
+    alt: "",
+    category: "dating",
+    width: 1,
+    height: 1,
+  },
+  {
+    id: 17,
+    src: "https://res.cloudinary.com/dwozuizmv/image/upload/v1750772001/WhatsApp_Image_2025-06-24_at_2.27.08_PM_cmu2gl.jpg",
+    alt: "",
+    category: "dating",
+    width: 1,
+    height: 1,
+  },
+  {
+    id: 18,
+    src: "https://res.cloudinary.com/dwozuizmv/image/upload/v1750772002/WhatsApp_Image_2025-06-24_at_2.27.07_PM_1_vxpekk.jpg",
+    alt: "",
+    category: "dating",
+    width: 1,
+    height: 1,
+  },
+  {
+    id: 19,
+    src: "https://res.cloudinary.com/dwozuizmv/video/upload/v1750772019/WhatsApp_Video_2025-06-24_at_2.27.04_PM_j4hw0k.mp4",
+    alt: "",
+    video: true,
+    category: "dating",
+    width: 1,
+    height: 1,
+  },
+  {
+    id: 20,
+    src: "https://res.cloudinary.com/dwozuizmv/video/upload/v1750772782/WhatsApp_Video_2025-06-24_at_2.37.02_PM_abouuf.mp4",
+    alt: "",
+    video: true,
+    category: "celebration",
+    width: 1,
+    height: 1,
+  },
+  {
+    id: 21,
+    src: "https://res.cloudinary.com/dwozuizmv/image/upload/v1750772001/WhatsApp_Image_2025-06-24_at_2.27.07_PM_nre0x7.jpg",
+    alt: "",
+    category: "dating",
+    width: 1,
+    height: 1,
+  },
+
+  {
+    id: 22,
+    src: "https://res.cloudinary.com/dwozuizmv/video/upload/v1750773580/WhatsApp_Video_2025-06-24_at_2.48.40_PM_fsammo.mp4",
+    alt: "",
+    video: true,
+    category: "celebration",
+    width: 1,
+    height: 1,
+  },
+  {
+    id: 23,
+    src: "https://res.cloudinary.com/dwozuizmv/video/upload/v1750773566/WhatsApp_Video_2025-06-24_at_2.48.41_PM_ewy6jb.mp4",
+    alt: "Engagement",
+    video: true,
+    category: "engagement",
+    width: 1,
+    height: 1,
+  },
 ];
 
 const categories = [
@@ -144,6 +214,61 @@ export default function GalleryPage() {
   const [selectedImage, setSelectedImage] = useState<
     (typeof galleryImages)[0] | null
   >(null);
+  const [videoThumbnails, setVideoThumbnails] = useState<{
+    [key: number]: string;
+  }>({});
+  const videoRef = useRef<HTMLVideoElement>(null);
+
+  // Generate video thumbnails
+  useEffect(() => {
+    const generateThumbnails = async () => {
+      const thumbnails: { [key: number]: string } = {};
+
+      for (const image of galleryImages) {
+        if (image.video) {
+          try {
+            const video = document.createElement("video");
+            video.crossOrigin = "anonymous";
+            video.muted = true;
+            video.src = image.src;
+
+            await new Promise((resolve, reject) => {
+              video.addEventListener("loadeddata", resolve);
+              video.addEventListener("error", reject);
+              video.load();
+            });
+
+            // Seek to 1 second to get a good frame
+            video.currentTime = 1;
+
+            await new Promise((resolve) => {
+              video.addEventListener("seeked", resolve);
+            });
+
+            const canvas = document.createElement("canvas");
+            canvas.width = video.videoWidth;
+            canvas.height = video.videoHeight;
+            const ctx = canvas.getContext("2d");
+
+            if (ctx) {
+              ctx.drawImage(video, 0, 0, canvas.width, canvas.height);
+              thumbnails[image.id] = canvas.toDataURL("image/jpeg", 0.8);
+            }
+          } catch (error) {
+            console.error(
+              "Error generating thumbnail for video:",
+              image.id,
+              error
+            );
+          }
+        }
+      }
+
+      setVideoThumbnails(thumbnails);
+    };
+
+    generateThumbnails();
+  }, []);
 
   const filteredImages =
     selectedCategory === "all"
@@ -155,11 +280,17 @@ export default function GalleryPage() {
   };
 
   const closeLightbox = () => {
+    if (videoRef.current) {
+      videoRef.current.pause();
+    }
     setSelectedImage(null);
   };
 
   const nextImage = () => {
     if (selectedImage) {
+      if (videoRef.current) {
+        videoRef.current.pause();
+      }
       const currentIndex = filteredImages.findIndex(
         (img) => img.id === selectedImage.id
       );
@@ -170,6 +301,9 @@ export default function GalleryPage() {
 
   const prevImage = () => {
     if (selectedImage) {
+      if (videoRef.current) {
+        videoRef.current.pause();
+      }
       const currentIndex = filteredImages.findIndex(
         (img) => img.id === selectedImage.id
       );
@@ -266,10 +400,48 @@ export default function GalleryPage() {
                 } ${styles[`span${image.height}`]}`}
                 onClick={() => openLightbox(image)}
               >
-                <div
-                  className={styles.imageContainer}
-                  style={{ backgroundImage: `url(${image.src})` }}
-                >
+                <div className={styles.imageContainer}>
+                  {image.video ? (
+                    <div className={styles.videoContainer}>
+                      {videoThumbnails[image.id] ? (
+                        <div
+                          className={styles.videoThumbnail}
+                          style={{
+                            backgroundImage: `url(${
+                              videoThumbnails[image.id]
+                            })`,
+                          }}
+                        />
+                      ) : (
+                        <div className={styles.videoThumbnailPlaceholder}>
+                          <span>Loading...</span>
+                        </div>
+                      )}
+                      <video
+                        src={image.src}
+                        className={styles.hiddenVideo}
+                        muted
+                        loop
+                        onMouseEnter={(e) => {
+                          const video = e.currentTarget as HTMLVideoElement;
+                          video.play();
+                        }}
+                        onMouseLeave={(e) => {
+                          const video = e.currentTarget as HTMLVideoElement;
+                          video.pause();
+                          video.currentTime = 0;
+                        }}
+                      />
+                      <div className={styles.playButton}>
+                        <span>▶</span>
+                      </div>
+                    </div>
+                  ) : (
+                    <div
+                      className={styles.imageBackground}
+                      style={{ backgroundImage: `url(${image.src})` }}
+                    />
+                  )}
                   <div className={styles.imageOverlay}>
                     <div className={styles.imageInfo}>
                       <h3>{image.alt}</h3>
@@ -319,10 +491,21 @@ export default function GalleryPage() {
               </button>
 
               <div className={styles.lightboxImage}>
-                <div
-                  className={styles.imageDisplay}
-                  style={{ backgroundImage: `url(${selectedImage.src})` }}
-                />
+                {selectedImage.video ? (
+                  <video
+                    ref={videoRef}
+                    src={selectedImage.src}
+                    className={styles.videoDisplay}
+                    controls
+                    autoPlay
+                    loop
+                  />
+                ) : (
+                  <div
+                    className={styles.imageDisplay}
+                    style={{ backgroundImage: `url(${selectedImage.src})` }}
+                  />
+                )}
                 <div className={styles.imageCaption}>
                   <h3>{selectedImage.alt}</h3>
                   <p>

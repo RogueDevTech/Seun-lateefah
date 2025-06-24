@@ -8,6 +8,7 @@ import styles from "./page.module.scss";
 
 const weddingImages = [
   "https://res.cloudinary.com/dwozuizmv/image/upload/v1750764851/WhatsApp_Image_2025-06-24_at_12.22.03_PM_xmx8uq.jpg",
+  "https://res.cloudinary.com/dwozuizmv/image/upload/v1750772779/WhatsApp_Image_2025-06-24_at_2.37.04_PM_tjmdct.jpg",
   "https://res.cloudinary.com/dwozuizmv/image/upload/v1750764851/WhatsApp_Image_2025-06-24_at_12.22.04_PM_da6dzc.jpg",
   "https://res.cloudinary.com/dwozuizmv/image/upload/v1750764851/WhatsApp_Image_2025-06-24_at_12.22.05_PM_u0gcgz.jpg",
 
