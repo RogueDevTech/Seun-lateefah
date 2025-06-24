@@ -51,6 +51,15 @@ const bridesmaids = [
     relationship: "Friend",
     description: "",
   },
+  {
+    id: 6,
+    name: "Zubeidah Farouq",
+    role: "Bridesmaid",
+    image:
+      "https://res.cloudinary.com/dpy9rwwub/image/upload/v1750798215/zubeidah_bv0zb5.jpg",
+    relationship: "Friend",
+    description: "",
+  },
 ];
 
 const groomsmen = [
@@ -96,6 +105,33 @@ const groomsmen = [
     role: "Groomsman",
     image:
       "https://res.cloudinary.com/dwozuizmv/image/upload/v1750772001/WhatsApp_Image_2025-06-24_at_2.26.20_PM_my4gq6.jpg",
+    relationship: "College Friend",
+    description: "",
+  },
+  {
+    id: 6,
+    name: "Taiwo Johnson",
+    role: "Groomsman",
+    image:
+      "https://res.cloudinary.com/dpy9rwwub/image/upload/v1750797795/taiwo_oyw3qv.jpg",
+    relationship: "College Friend",
+    description: "",
+  },
+  {
+    id: 7,
+    name: "Ayodele Akindele",
+    role: "Groomsman",
+    image:
+      "https://res.cloudinary.com/dpy9rwwub/image/upload/v1750798187/ayodele_cgvra9.jpg",
+    relationship: "College Friend",
+    description: "",
+  },
+  {
+    id: 8,
+    name: "Busayo Omoyajowo",
+    role: "Groomsman",
+    image:
+      "https://res.cloudinary.com/dpy9rwwub/image/upload/v1750798204/busayo_bglixf.jpg",
     relationship: "College Friend",
     description: "",
   },

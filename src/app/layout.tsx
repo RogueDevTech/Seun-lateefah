@@ -27,9 +27,9 @@ const poppins = Poppins({
 });
 
 export const metadata: Metadata = {
-  title: "Amanda & Henry - Wedding",
+  title: "Seun & Lateefah - Wedding",
   description:
-    "Join us in celebrating our love story. Amanda & Henry are getting married!",
+    "Join us in celebrating our love story. Seun & Lateefah are getting married!",
   icons: {
     icon: "Favicon.svg",
   },
