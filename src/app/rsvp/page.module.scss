@@ -35,7 +35,7 @@
         transition: color 0.3s ease;
 
         &:hover {
-          color: #e74c3c;
+          color: #000000;
         }
       }
     }
@@ -54,12 +54,12 @@
         position: relative;
 
         &:hover {
-          color: #e74c3c;
+          color: #000000;
           transform: translateY(-2px);
         }
 
         &.active {
-          color: #e74c3c;
+          color: #000000;
           font-weight: 600;
         }
 
@@ -70,7 +70,7 @@
           left: 0;
           width: 0;
           height: 2px;
-          background: #e74c3c;
+          background: #000000;
           transition: width 0.3s ease;
         }
 
@@ -86,7 +86,7 @@
 // Hero Section
 .heroSection {
   height: 50vh;
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  background-color: #000000;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -146,15 +146,15 @@
     margin: 0 auto;
     background: white;
     border-radius: 20px;
-    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+    // box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
     overflow: hidden;
 
     .formHeader {
-      background: linear-gradient(135deg, #e74c3c, #c0392b);
+      background: #000000;
       color: white;
-      padding: 3rem 2rem;
+      padding: 1rem 1rem;
       text-align: center;
-
+      border-radius: 20px 20px 0 0;
       h2 {
         font-family: "Playfair Display", serif;
         font-size: 2.5rem;
@@ -202,7 +202,7 @@
 
           &:focus {
             outline: none;
-            border-color: #e74c3c;
+            border-color: #000000;
             background: white;
             box-shadow: 0 0 0 3px rgba(231, 76, 60, 0.1);
           }
@@ -220,7 +220,7 @@
 
       .submitButton {
         width: 100%;
-        background: linear-gradient(135deg, #e74c3c, #c0392b);
+        background: linear-gradient(135deg, #000000, #c0392b);
         color: white;
         padding: 1.2rem;
         border: none;
@@ -246,7 +246,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  background-color: #000000;
   color: white;
 
   .successContent {
@@ -329,7 +329,7 @@
         transform: translateX(-50%);
         width: 80px;
         height: 3px;
-        background: linear-gradient(135deg, #e74c3c, #f39c12);
+        background: linear-gradient(135deg, #000000, #f39c12);
       }
     }
 
@@ -363,7 +363,7 @@
         .date {
           font-size: 1.3rem;
           font-weight: 600;
-          color: #e74c3c;
+          color: #000000;
           margin-bottom: 0.5rem;
         }
 
@@ -510,7 +510,7 @@
     font-family: var(--font-playfair-display), serif;
     font-size: 1.2rem;
     font-weight: 700;
-    color: #e74c3c;
+    color: #000000;
     margin-bottom: 1rem;
     letter-spacing: 1px;
   }
@@ -540,7 +540,7 @@
 .rsvpContact:hover,
 .rsvpContact:focus {
   background: #f9d29d;
-  color: #e74c3c;
+  color: #000000;
   box-shadow: 0 4px 18px #f9d29d66;
 }
 
@@ -556,7 +556,7 @@
   margin-bottom: 2rem;
 }
 .submitButton {
-  background: linear-gradient(90deg, #e74c3c 60%, #f9d29d 100%);
+  background: linear-gradient(90deg, #000000 60%, #f9d29d 100%);
   color: #fff;
   font-weight: 700;
   font-size: 1.1rem;
@@ -569,7 +569,7 @@
 }
 .submitButton:hover,
 .submitButton:focus {
-  background: #e74c3c;
+  background: #000000;
   color: #fffbe7;
   box-shadow: 0 4px 18px #f9d29d66;
 }

@@ -35,7 +35,7 @@
         transition: color 0.3s ease;
 
         &:hover {
-          color: #e74c3c;
+          color: #000000;
         }
       }
     }
@@ -54,12 +54,12 @@
         position: relative;
 
         &:hover {
-          color: #e74c3c;
+          color: #000000;
           transform: translateY(-2px);
         }
 
         &.active {
-          color: #e74c3c;
+          color: #000000;
           font-weight: 600;
         }
 
@@ -70,7 +70,7 @@
           left: 0;
           width: 0;
           height: 2px;
-          background: #e74c3c;
+          background: #000000;
           transition: width 0.3s ease;
         }
 
@@ -86,7 +86,7 @@
 // Hero Section
 .heroSection {
   height: 60vh;
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  background-color: #000000;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -157,7 +157,7 @@
       transform: translateX(-50%);
       width: 80px;
       height: 3px;
-      background: linear-gradient(135deg, #e74c3c, #f39c12);
+      background: linear-gradient(135deg, #000000, #f39c12);
     }
   }
 
@@ -235,7 +235,7 @@
       position: absolute;
       top: 1rem;
       right: 1rem;
-      background: linear-gradient(135deg, #e74c3c, #c0392b);
+      background: linear-gradient(135deg, #000000, #c0392b);
       color: white;
       padding: 0.5rem 1rem;
       border-radius: 20px;
@@ -259,7 +259,7 @@
 
     .relationship {
       font-size: 0.9rem;
-      color: #e74c3c;
+      color: #000000;
       font-weight: 600;
       text-transform: uppercase;
       letter-spacing: 0.5px;
@@ -278,7 +278,7 @@
 // CTA Section
 .ctaSection {
   padding: 6rem 0;
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  background-color: #000000;
   color: white;
   text-align: center;
 

@@ -51,7 +51,7 @@
         position: relative;
 
         &:hover {
-          color: #e74c3c;
+          color: #000000;
           transform: translateY(-2px);
         }
 
@@ -62,7 +62,7 @@
           left: 0;
           width: 0;
           height: 2px;
-          background: #e74c3c;
+          background: #000000;
           transition: width 0.3s ease;
         }
 
@@ -186,7 +186,7 @@
 
           .rsvpButton {
             display: inline-block;
-            background: linear-gradient(135deg, #e74c3c, #c0392b);
+            background: linear-gradient(135deg, #000000, #c0392b);
             color: white;
             padding: 1rem 3rem;
             border-radius: 50px;
@@ -200,7 +200,7 @@
             &:hover {
               transform: translateY(-3px);
               box-shadow: 0 6px 20px rgba(231, 76, 60, 0.4);
-              background: linear-gradient(135deg, #c0392b, #e74c3c);
+              background: linear-gradient(135deg, #c0392b, #000000);
             }
           }
         }
@@ -238,7 +238,7 @@
           transform: translateX(-50%);
           width: 80px;
           height: 3px;
-          background: linear-gradient(135deg, #e74c3c, #f39c12);
+          background: linear-gradient(135deg, #000000, #f39c12);
         }
       }
 
@@ -280,8 +280,7 @@
 // Quick Links Section
 .quickLinksSection {
   padding: 4rem 0;
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-
+  background-color: #000000;
   .container {
     max-width: 1200px;
     margin: 0 auto;
@@ -464,7 +463,7 @@
     top: 1.2rem;
     right: 1.2rem;
     z-index: 2;
-    color: #e74c3c;
+    color: #000000;
     font-size: 2rem;
     cursor: pointer;
     transition: color 0.2s;
@@ -492,7 +491,7 @@
       &:focus,
       &:hover {
         background: #f9d29d;
-        color: #e74c3c;
+        color: #000000;
       }
     }
   }
