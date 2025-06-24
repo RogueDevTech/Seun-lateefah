@@ -23,7 +23,7 @@ export default function MobileMenu() {
         className={styles.menuButton}
         onClick={() => setMenuOpen(!menuOpen)}
       >
-        {menuOpen ? <FiX size={32} /> : <FiMenu size={32} />}
+        {menuOpen ? <FiX size={18} /> : <FiMenu size={18} />}
       </button>
       {/* Animated mobile menu */}
       <AnimatePresence>

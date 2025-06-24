@@ -2,8 +2,8 @@
 
 import { useState, useEffect } from "react";
 import Link from "next/link";
-import { motion, AnimatePresence } from "framer-motion";
-import { FiMenu, FiX } from "react-icons/fi";
+import { motion } from "framer-motion";
+import MobileMenu from "./MobileMenu";
 import styles from "./page.module.scss";
 
 const weddingImages = [
@@ -11,15 +11,12 @@ const weddingImages = [
   "https://res.cloudinary.com/dwozuizmv/image/upload/v1750772779/WhatsApp_Image_2025-06-24_at_2.37.04_PM_tjmdct.jpg",
   "https://res.cloudinary.com/dwozuizmv/image/upload/v1750764851/WhatsApp_Image_2025-06-24_at_12.22.04_PM_da6dzc.jpg",
   "https://res.cloudinary.com/dwozuizmv/image/upload/v1750764851/WhatsApp_Image_2025-06-24_at_12.22.05_PM_u0gcgz.jpg",
-
   "https://res.cloudinary.com/dwozuizmv/image/upload/v1750764851/WhatsApp_Image_2025-06-24_at_12.22.03_PM_xmx8uq.jpg",
   "https://res.cloudinary.com/dwozuizmv/image/upload/v1750764851/WhatsApp_Image_2025-06-24_at_12.22.04_PM_da6dzc.jpg",
   "https://res.cloudinary.com/dwozuizmv/image/upload/v1750764851/WhatsApp_Image_2025-06-24_at_12.22.05_PM_u0gcgz.jpg",
-
   "https://res.cloudinary.com/dwozuizmv/image/upload/v1750764851/WhatsApp_Image_2025-06-24_at_12.22.03_PM_xmx8uq.jpg",
   "https://res.cloudinary.com/dwozuizmv/image/upload/v1750764851/WhatsApp_Image_2025-06-24_at_12.22.04_PM_da6dzc.jpg",
   "https://res.cloudinary.com/dwozuizmv/image/upload/v1750764851/WhatsApp_Image_2025-06-24_at_12.22.05_PM_u0gcgz.jpg",
-
   "https://res.cloudinary.com/dwozuizmv/image/upload/v1750764851/WhatsApp_Image_2025-06-24_at_12.22.03_PM_xmx8uq.jpg",
   "https://res.cloudinary.com/dwozuizmv/image/upload/v1750764851/WhatsApp_Image_2025-06-24_at_12.22.04_PM_da6dzc.jpg",
   "https://res.cloudinary.com/dwozuizmv/image/upload/v1750764851/WhatsApp_Image_2025-06-24_at_12.22.05_PM_u0gcgz.jpg",
@@ -29,7 +26,6 @@ export default function WeddingHomePage() {
   const [scrollPosition, setScrollPosition] = useState(0);
   const [imageWidth, setImageWidth] = useState(0);
   const [totalWidth, setTotalWidth] = useState(0);
-  const [menuOpen, setMenuOpen] = useState(false);
 
   useEffect(() => {
     // Only runs on client
@@ -47,23 +43,16 @@ export default function WeddingHomePage() {
     if (!imageWidth || !totalWidth) return;
     const interval = setInterval(() => {
       setScrollPosition((prev) => {
-        if (prev >= totalWidth) {
+        const newPosition = prev + 2;
+        // When we reach the end of the first set, reset to beginning seamlessly
+        if (newPosition >= totalWidth) {
           return 0;
         }
-        return prev + 2;
+        return newPosition;
       });
     }, 30);
     return () => clearInterval(interval);
   }, [imageWidth, totalWidth]);
-
-  // Close menu on route change (optional, for SPA feel)
-  useEffect(() => {
-    if (menuOpen) {
-      const close = () => setMenuOpen(false);
-      window.addEventListener("resize", close);
-      return () => window.removeEventListener("resize", close);
-    }
-  }, [menuOpen]);
 
   return (
     <div className={styles.weddingHomepage}>
@@ -90,69 +79,8 @@ export default function WeddingHomePage() {
         </div>
       </nav>
 
-      {/* Hamburger menu button (mobile only) */}
-      <button className={styles.menuButton} onClick={() => setMenuOpen(true)}>
-        <FiMenu size={32} />
-      </button>
-
-      {/* Animated mobile menu */}
-      <AnimatePresence>
-        {menuOpen && (
-          <motion.div
-            className={styles.mobileMenuOverlay}
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
-            onClick={() => setMenuOpen(false)}
-          >
-            <motion.div
-              className={styles.mobileMenu}
-              initial={{ x: "100%" }}
-              animate={{ x: 0 }}
-              exit={{ x: "100%" }}
-              transition={{ type: "spring", stiffness: 400, damping: 40 }}
-              onClick={(e) => e.stopPropagation()}
-            >
-              <button
-                className={styles.closeButton}
-                onClick={() => setMenuOpen(false)}
-              >
-                <FiX size={32} />
-              </button>
-              <nav className={styles.mobileNavLinks}>
-                <Link
-                  href="/"
-                  className={styles.navLink}
-                  onClick={() => setMenuOpen(false)}
-                >
-                  Home
-                </Link>
-                <Link
-                  href="/wedding-party"
-                  className={styles.navLink}
-                  onClick={() => setMenuOpen(false)}
-                >
-                  Wedding Party
-                </Link>
-                <Link
-                  href="/gallery"
-                  className={styles.navLink}
-                  onClick={() => setMenuOpen(false)}
-                >
-                  Gallery
-                </Link>
-                <Link
-                  href="/rsvp"
-                  className={styles.navLink}
-                  onClick={() => setMenuOpen(false)}
-                >
-                  RSVP
-                </Link>
-              </nav>
-            </motion.div>
-          </motion.div>
-        )}
-      </AnimatePresence>
+      {/* Mobile Menu Component */}
+      <MobileMenu />
 
       {/* Hero Scrolling Section */}
       <section className={styles.heroSection}>
@@ -161,17 +89,33 @@ export default function WeddingHomePage() {
             className={styles.scrollTrack}
             animate={{ x: -scrollPosition }}
             transition={{ duration: 0.05, ease: "linear" }}
+            style={{
+              width: `${totalWidth * 2}px`,
+              display: "flex",
+            }}
           >
-            {[
-              ...weddingImages,
-              ...weddingImages,
-              ...weddingImages,
-              ...weddingImages,
-            ].map((image, index) => (
+            {/* First set of images */}
+            {weddingImages.map((image, index) => (
               <div
-                key={index}
+                key={`first-${index}`}
                 className={styles.scrollImage}
-                style={{ backgroundImage: `url(${image})` }}
+                style={{
+                  backgroundImage: `url(${image})`,
+                  width: `${imageWidth}px`,
+                  flexShrink: 0,
+                }}
+              />
+            ))}
+            {/* Duplicate set for seamless loop */}
+            {weddingImages.map((image, index) => (
+              <div
+                key={`second-${index}`}
+                className={styles.scrollImage}
+                style={{
+                  backgroundImage: `url(${image})`,
+                  width: `${imageWidth}px`,
+                  flexShrink: 0,
+                }}
               />
             ))}
           </motion.div>
