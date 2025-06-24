@@ -2,10 +2,23 @@
 
 import { useState, useEffect } from "react";
 import Link from "next/link";
-import { motion } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
+import { FiMenu, FiX } from "react-icons/fi";
 import styles from "./page.module.scss";
 
 const weddingImages = [
+  "https://res.cloudinary.com/dwozuizmv/image/upload/v1750764851/WhatsApp_Image_2025-06-24_at_12.22.03_PM_xmx8uq.jpg",
+  "https://res.cloudinary.com/dwozuizmv/image/upload/v1750764851/WhatsApp_Image_2025-06-24_at_12.22.04_PM_da6dzc.jpg",
+  "https://res.cloudinary.com/dwozuizmv/image/upload/v1750764851/WhatsApp_Image_2025-06-24_at_12.22.05_PM_u0gcgz.jpg",
+
+  "https://res.cloudinary.com/dwozuizmv/image/upload/v1750764851/WhatsApp_Image_2025-06-24_at_12.22.03_PM_xmx8uq.jpg",
+  "https://res.cloudinary.com/dwozuizmv/image/upload/v1750764851/WhatsApp_Image_2025-06-24_at_12.22.04_PM_da6dzc.jpg",
+  "https://res.cloudinary.com/dwozuizmv/image/upload/v1750764851/WhatsApp_Image_2025-06-24_at_12.22.05_PM_u0gcgz.jpg",
+
+  "https://res.cloudinary.com/dwozuizmv/image/upload/v1750764851/WhatsApp_Image_2025-06-24_at_12.22.03_PM_xmx8uq.jpg",
+  "https://res.cloudinary.com/dwozuizmv/image/upload/v1750764851/WhatsApp_Image_2025-06-24_at_12.22.04_PM_da6dzc.jpg",
+  "https://res.cloudinary.com/dwozuizmv/image/upload/v1750764851/WhatsApp_Image_2025-06-24_at_12.22.05_PM_u0gcgz.jpg",
+
   "https://res.cloudinary.com/dwozuizmv/image/upload/v1750764851/WhatsApp_Image_2025-06-24_at_12.22.03_PM_xmx8uq.jpg",
   "https://res.cloudinary.com/dwozuizmv/image/upload/v1750764851/WhatsApp_Image_2025-06-24_at_12.22.04_PM_da6dzc.jpg",
   "https://res.cloudinary.com/dwozuizmv/image/upload/v1750764851/WhatsApp_Image_2025-06-24_at_12.22.05_PM_u0gcgz.jpg",
@@ -22,6 +35,7 @@ const TOTAL_WIDTH = IMAGE_WIDTH * IMAGES_COUNT;
 
 export default function WeddingHomePage() {
   const [scrollPosition, setScrollPosition] = useState(0);
+  const [menuOpen, setMenuOpen] = useState(false);
 
   useEffect(() => {
     const handleResize = () => {
@@ -45,9 +59,18 @@ export default function WeddingHomePage() {
     return () => clearInterval(interval);
   }, []);
 
+  // Close menu on route change (optional, for SPA feel)
+  useEffect(() => {
+    if (menuOpen) {
+      const close = () => setMenuOpen(false);
+      window.addEventListener("resize", close);
+      return () => window.removeEventListener("resize", close);
+    }
+  }, [menuOpen]);
+
   return (
     <div className={styles.weddingHomepage}>
-      {/* Navigation */}
+      {/* Header (hidden on mobile) */}
       <nav className={styles.navigation}>
         <div className={styles.navContainer}>
           <div className={styles.logo}>
@@ -69,6 +92,70 @@ export default function WeddingHomePage() {
           </div>
         </div>
       </nav>
+
+      {/* Hamburger menu button (mobile only) */}
+      <button className={styles.menuButton} onClick={() => setMenuOpen(true)}>
+        <FiMenu size={32} />
+      </button>
+
+      {/* Animated mobile menu */}
+      <AnimatePresence>
+        {menuOpen && (
+          <motion.div
+            className={styles.mobileMenuOverlay}
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            onClick={() => setMenuOpen(false)}
+          >
+            <motion.div
+              className={styles.mobileMenu}
+              initial={{ x: "100%" }}
+              animate={{ x: 0 }}
+              exit={{ x: "100%" }}
+              transition={{ type: "spring", stiffness: 400, damping: 40 }}
+              onClick={(e) => e.stopPropagation()}
+            >
+              <button
+                className={styles.closeButton}
+                onClick={() => setMenuOpen(false)}
+              >
+                <FiX size={32} />
+              </button>
+              <nav className={styles.mobileNavLinks}>
+                <Link
+                  href="/"
+                  className={styles.navLink}
+                  onClick={() => setMenuOpen(false)}
+                >
+                  Home
+                </Link>
+                <Link
+                  href="/wedding-party"
+                  className={styles.navLink}
+                  onClick={() => setMenuOpen(false)}
+                >
+                  Wedding Party
+                </Link>
+                <Link
+                  href="/gallery"
+                  className={styles.navLink}
+                  onClick={() => setMenuOpen(false)}
+                >
+                  Gallery
+                </Link>
+                <Link
+                  href="/rsvp"
+                  className={styles.navLink}
+                  onClick={() => setMenuOpen(false)}
+                >
+                  RSVP
+                </Link>
+              </nav>
+            </motion.div>
+          </motion.div>
+        )}
+      </AnimatePresence>
 
       {/* Hero Scrolling Section */}
       <section className={styles.heroSection}>
@@ -124,9 +211,9 @@ export default function WeddingHomePage() {
                         901 437 1462)
                       </span>
                     </div> */}
-                    <Link href="/rsvp" className={styles.rsvpButton}>
+                    {/* <Link href="/rsvp" className={styles.rsvpButton}>
                       RSVP
-                    </Link>
+                    </Link> */}
                   </div>
                 </div>
               </div>

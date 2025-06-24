@@ -401,3 +401,188 @@
     }
   }
 }
+
+@media (max-width: 600px) {
+  .navigation {
+    display: none !important;
+  }
+  .menuButton {
+    display: flex !important;
+    position: fixed;
+    top: 1.2rem;
+    right: 1.2rem;
+    z-index: 1201;
+    background: rgba(255, 255, 255, 0.95);
+    border: none;
+    border-radius: 50%;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+    padding: 0.7rem;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: box-shadow 0.2s;
+  }
+  .mobileMenuOverlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.35);
+    z-index: 1200;
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-end;
+  }
+  .mobileMenu {
+    width: 75vw;
+    max-width: 320px;
+    height: 100vh;
+    background: linear-gradient(135deg, #fffbe7 60%, #f9d29d 100%);
+    box-shadow: -4px 0 32px rgba(0, 0, 0, 0.1);
+    padding: 2.5rem 1.5rem 1.5rem 1.5rem;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    border-top-left-radius: 32px;
+    border-bottom-left-radius: 32px;
+    animation: menuGlow 2s infinite alternate;
+  }
+  @keyframes menuGlow {
+    from {
+      box-shadow: -4px 0 32px #f9d29d44;
+    }
+    to {
+      box-shadow: -4px 0 48px #f9d29d99;
+    }
+  }
+  .closeButton {
+    background: none;
+    border: none;
+    position: absolute;
+    top: 1.2rem;
+    right: 1.2rem;
+    z-index: 2;
+    color: #e74c3c;
+    font-size: 2rem;
+    cursor: pointer;
+    transition: color 0.2s;
+  }
+  .mobileNavLinks {
+    display: flex;
+    flex-direction: column;
+    gap: 2.2rem;
+    margin-top: 3.5rem;
+    width: 100%;
+    align-items: flex-end;
+    .navLink {
+      font-family: var(--font-playfair-display), serif;
+      font-size: 1.3rem;
+      font-weight: 700;
+      color: #2c3e50;
+      text-decoration: none;
+      letter-spacing: 1.2px;
+      padding: 0.2rem 0.7rem;
+      border-radius: 12px;
+      background: linear-gradient(90deg, #fffbe7 80%, #f9d29d 100%);
+      box-shadow: 0 2px 8px #f9d29d22;
+      transition: background 0.2s, color 0.2s;
+      &:active,
+      &:focus,
+      &:hover {
+        background: #f9d29d;
+        color: #e74c3c;
+      }
+    }
+  }
+  .heroSection {
+    height: 85vh;
+    // outline: 2px solid red;
+    .scrollContainer {
+      .scrollImage {
+        width: 90vw;
+        min-width: 90vw;
+        height: 100%;
+        .overlay {
+          .heroContent {
+            padding: 1rem 0.5rem;
+            .mainTitle {
+              font-size: 2rem;
+              margin-bottom: 0.7rem;
+            }
+            .coupleNames {
+              flex-direction: column;
+              gap: 0.5rem;
+              h2 {
+                font-size: 1.7rem;
+              }
+              .andText {
+                font-size: 1.2rem;
+                margin: 0.2rem 0;
+              }
+            }
+            .hashtag {
+              font-size: 1rem;
+              margin: 0.7rem 0 0.5rem 0;
+            }
+            .dates {
+              p {
+                font-size: 0.9rem;
+                margin: 0.2rem 0;
+              }
+            }
+            .rsvpBox {
+              font-size: 0.9rem;
+              margin-bottom: 0.7rem;
+            }
+            .rsvpButton {
+              font-size: 1rem;
+              padding: 0.7rem 2rem;
+              margin-top: 1rem;
+            }
+          }
+        }
+      }
+    }
+  }
+  .quickLinksSection {
+    padding: 2rem 0;
+    .quickLinks {
+      grid-template-columns: 1fr;
+      gap: 1rem;
+      .quickLinkContent {
+        h3 {
+          font-size: 1.2rem;
+        }
+        p {
+          font-size: 0.9rem;
+        }
+      }
+    }
+  }
+  .loveStorySection {
+    padding: 2rem 0;
+    .container {
+      .loveStory {
+        h2 {
+          font-size: 1.5rem;
+        }
+        .storyContent {
+          grid-template-columns: 1fr;
+          gap: 1rem;
+          .storyText {
+            p {
+              font-size: 0.95rem;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+// Desktop: hide menu button
+.menuButton {
+  display: none;
+}
