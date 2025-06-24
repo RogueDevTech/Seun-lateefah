@@ -7,14 +7,6 @@ import styles from "./page.module.scss";
 
 const galleryImages = [
   {
-    id: 1,
-    src: "https://images.unsplash.com/photo-1519741497674-611481863552?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80",
-    alt: "Engagement Photo",
-    category: "engagement",
-    width: 1,
-    height: 1,
-  },
-  {
     id: 2,
     src: "https://images.unsplash.com/photo-1511285560929-80b456fea0bc?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2069&q=80",
     alt: "First Date",
@@ -31,9 +23,17 @@ const galleryImages = [
     height: 2,
   },
   {
+    id: 1,
+    src: "https://res.cloudinary.com/dwozuizmv/image/upload/v1750763652/WhatsApp_Image_2025-06-24_at_10.10.27_AM_c03ffi.jpg",
+    alt: "Engagement Photo",
+    category: "engagement",
+    width: 1,
+    height: 1,
+  },
+  {
     id: 4,
-    src: "https://images.unsplash.com/photo-1511795409834-ef04bbd61622?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2069&q=80",
-    alt: "Proposal Moment",
+    src: "https://res.cloudinary.com/dwozuizmv/image/upload/v1750763652/WhatsApp_Image_2025-06-24_at_10.10.28_AM_gntach.jpg",
+    alt: "Engagement Photo",
     category: "engagement",
     width: 1,
     height: 1,
@@ -99,6 +99,31 @@ const galleryImages = [
     src: "https://images.unsplash.com/photo-1511795409834-ef04bbd61622?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2069&q=80",
     alt: "Wedding Rehearsal",
     category: "wedding",
+    width: 1,
+    height: 1,
+  },
+  {
+    id: 13,
+    src: "https://res.cloudinary.com/dwozuizmv/image/upload/v1750764851/WhatsApp_Image_2025-06-24_at_12.28.08_PM_j4pgai.jpg",
+    alt: "Proposal Moment",
+    category: "engagement",
+    width: 1,
+    height: 1,
+  },
+
+  {
+    id: 14,
+    src: "https://res.cloudinary.com/dwozuizmv/image/upload/v1750763652/WhatsApp_Image_2025-06-24_at_10.10.32_AM_zaq2g3.jpg",
+    alt: "Engagement Photo",
+    category: "engagement",
+    width: 1,
+    height: 1,
+  },
+  {
+    id: 15,
+    src: "https://res.cloudinary.com/dwozuizmv/image/upload/v1750763652/WhatsApp_Image_2025-06-24_at_10.10.30_AM_krfrvk.jpg",
+    alt: "Engagement Photo",
+    category: "engagement",
     width: 1,
     height: 1,
   },

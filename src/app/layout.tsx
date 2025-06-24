@@ -1,7 +1,8 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
-import { Playfair_Display, Dancing_Script } from "next/font/google";
+import { Great_Vibes, Poppins } from "next/font/google";
 import "../styles/globals.scss";
+import MobileMenu from "./MobileMenu";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -13,21 +14,22 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
-const playfairDisplay = Playfair_Display({
-  variable: "--font-playfair-display",
+const greatVibes = Great_Vibes({
+  variable: "--font-great-vibes",
+  weight: ["400"],
   subsets: ["latin"],
 });
 
-const dancingScript = Dancing_Script({
-  variable: "--font-dancing-script",
+const poppins = Poppins({
+  variable: "--font-poppins",
+  weight: ["400", "500", "600", "700"],
   subsets: ["latin"],
-  weight: ["400", "700"],
 });
 
 export const metadata: Metadata = {
-  title: "Oluwaseun & Lateefah - Wedding",
+  title: "Amanda & Henry - Wedding",
   description:
-    "Join us in celebrating our love story. Oluwaseun & Lateefah are getting married!",
+    "Join us in celebrating our love story. Amanda & Henry are getting married!",
   icons: {
     icon: "Favicon.svg",
   },
@@ -41,8 +43,9 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} ${playfairDisplay.variable} ${dancingScript.variable}`}
+        className={`${geistSans.variable} ${geistMono.variable} ${greatVibes.variable} ${poppins.variable}`}
       >
+        <MobileMenu />
         {children}
       </body>
     </html>

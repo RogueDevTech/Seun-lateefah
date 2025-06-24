@@ -22,42 +22,38 @@ const weddingImages = [
   "https://res.cloudinary.com/dwozuizmv/image/upload/v1750764851/WhatsApp_Image_2025-06-24_at_12.22.03_PM_xmx8uq.jpg",
   "https://res.cloudinary.com/dwozuizmv/image/upload/v1750764851/WhatsApp_Image_2025-06-24_at_12.22.04_PM_da6dzc.jpg",
   "https://res.cloudinary.com/dwozuizmv/image/upload/v1750764851/WhatsApp_Image_2025-06-24_at_12.22.05_PM_u0gcgz.jpg",
-  // "https://res.cloudinary.com/dwozuizmv/image/upload/v1750763652/WhatsApp_Image_2025-06-24_at_10.10.28_AM_gntach.jpg",
-  // "https://res.cloudinary.com/dwozuizmv/image/upload/v1750763652/WhatsApp_Image_2025-06-24_at_10.10.27_AM_c03ffi.jpg",
-  // "https://res.cloudinary.com/dwozuizmv/image/upload/v1750763652/WhatsApp_Image_2025-06-24_at_10.10.32_AM_zaq2g3.jpg",
-  // "https://res.cloudinary.com/dwozuizmv/image/upload/v1750763652/WhatsApp_Image_2025-06-24_at_10.10.31_AM_k3gq3p.jpg",
-  // "https://res.cloudinary.com/dwozuizmv/image/upload/v1750763652/WhatsApp_Image_2025-06-24_at_10.10.30_AM_krfrvk.jpg",
 ];
-
-const IMAGE_WIDTH = 0.35 * window.innerWidth; // 35vw in px
-const IMAGES_COUNT = weddingImages.length;
-const TOTAL_WIDTH = IMAGE_WIDTH * IMAGES_COUNT;
 
 export default function WeddingHomePage() {
   const [scrollPosition, setScrollPosition] = useState(0);
+  const [imageWidth, setImageWidth] = useState(0);
+  const [totalWidth, setTotalWidth] = useState(0);
   const [menuOpen, setMenuOpen] = useState(false);
 
   useEffect(() => {
+    // Only runs on client
     const handleResize = () => {
-      // Force re-render on resize to recalculate IMAGE_WIDTH
-      setScrollPosition((prev) => prev);
+      const width = 0.35 * window.innerWidth;
+      setImageWidth(width);
+      setTotalWidth(width * weddingImages.length);
     };
+    handleResize();
     window.addEventListener("resize", handleResize);
     return () => window.removeEventListener("resize", handleResize);
   }, []);
 
   useEffect(() => {
+    if (!imageWidth || !totalWidth) return;
     const interval = setInterval(() => {
       setScrollPosition((prev) => {
-        // When the scroll reaches the width of one set, reset to 0
-        if (prev >= TOTAL_WIDTH) {
+        if (prev >= totalWidth) {
           return 0;
         }
         return prev + 2;
       });
     }, 30);
     return () => clearInterval(interval);
-  }, []);
+  }, [imageWidth, totalWidth]);
 
   // Close menu on route change (optional, for SPA feel)
   useEffect(() => {
@@ -165,7 +161,6 @@ export default function WeddingHomePage() {
             animate={{ x: -scrollPosition }}
             transition={{ duration: 0.05, ease: "linear" }}
           >
-            {/* Duplicate images multiple times for seamless loop */}
             {[
               ...weddingImages,
               ...weddingImages,
@@ -175,50 +170,16 @@ export default function WeddingHomePage() {
               <div
                 key={index}
                 className={styles.scrollImage}
-                style={{
-                  backgroundImage: `url(${image})`,
-                }}
-              >
-                <div className={styles.overlay}>
-                  <div className={styles.heroContent}>
-                    <h1 className={styles.mainTitle}>We're Getting Married</h1>
-                    {/* <div className={styles.coupleNames}>
-                      <h2>Oluwaseun Yusuf</h2>
-                      <span className={styles.andText}>&amp;</span>
-                      <h2>Lateefah Abdulrahman</h2>
-                    </div> */}
-                    {/* <p className={styles.hashtag}>#SeunWedsLateefah</p> */}
-                    {/* <div className={styles.dates}>
-                      <p>
-                        <b>Traditional:</b> 27th June 2025, 4PM
-                        <br />
-                        Lane 3, Workers Village, Zone 8, Lokoja, Kogi State
-                      </p>
-                      <p>
-                        <b>Nikkah:</b> 28th June 2025, 10AM
-                        <br />
-                        Secretariate Mosque, Zone 8, Lokoja, Kogi State
-                      </p>
-                      <p>
-                        <b>Reception:</b> 28th June 2025, 11AM
-                        <br />
-                        Ayonete Hotel, Zone 8 Junction, Lokoja, Kogi State
-                      </p>
-                    </div>
-                    <div className={styles.rsvpBox}>
-                      <span>
-                        <b>RSVP:</b> Zubaidah (+234 810 301 8303), Tosin (+234
-                        901 437 1462)
-                      </span>
-                    </div> */}
-                    {/* <Link href="/rsvp" className={styles.rsvpButton}>
-                      RSVP
-                    </Link> */}
-                  </div>
-                </div>
-              </div>
+                style={{ backgroundImage: `url(${image})` }}
+              />
             ))}
           </motion.div>
+          {/* Single overlay above all images */}
+          <div className={styles.heroOverlay}>
+            <div className={styles.heroContent}>
+              <h1 className={styles.mainTitle}>We&apos;re Getting Married</h1>
+            </div>
+          </div>
         </div>
       </section>
 
@@ -256,27 +217,6 @@ export default function WeddingHomePage() {
                   said yes! Now, we&apos;re excited to take the next step and
                   begin our forever together—and we would be honored to have you
                   celebrate with us.
-                </p>
-              </div>
-              <div className={styles.storyText}>
-                <p className={styles.flag}>🇨🇮</p>
-                <p>
-                  Tout a commencé lors d&apos;une fête de remise des diplômes…
-                  aujourd&apos;hui, c&apos;est pour la vie 🎓❤️
-                </p>
-                <p>
-                  Notre histoire a débuté lors d&apos;une fête de remise des
-                  diplômes organisée par un ami commun sur le campus. Bien que
-                  nous ne nous connaissions pas encore, ce jour-là a tout
-                  changé. Il est venu me parler, et nous avons passé la soirée à
-                  discuter et danser.
-                </p>
-                <p>
-                  Quelques jours plus tard, nous avons eu notre tout premier
-                  rendez-vous — une partie de bowling — et il est vite devenu
-                  évident que quelque chose de spécial nous unissait. Depuis,
-                  nous avons partagé de nombreuses aventures, étudié côte à
-                  côte, et grandi ensemble.
                 </p>
               </div>
             </div>

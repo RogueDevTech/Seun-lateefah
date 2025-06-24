@@ -558,3 +558,9 @@
     }
   }
 }
+
+@media (max-width: 600px) {
+  .navigation {
+    display: none !important;
+  }
+}

@@ -147,7 +147,7 @@ export default function WeddingPartyPage() {
             className={styles.sectionHeader}
           >
             <h2>Bridesmaids</h2>
-            <p>The beautiful ladies who will be by Lateefah's side</p>
+            <p>The beautiful ladies who will be by Lateefah&apos;s side</p>
           </motion.div>
 
           <div className={styles.partyGrid}>
@@ -191,7 +191,7 @@ export default function WeddingPartyPage() {
             className={styles.sectionHeader}
           >
             <h2>Groomsmen</h2>
-            <p>The handsome gentlemen who will be by Henry's side</p>
+            <p>The handsome gentlemen who will be by Oluwaseun&apos;s side</p>
           </motion.div>
 
           <div className={styles.partyGrid}>

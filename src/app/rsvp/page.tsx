@@ -1,94 +1,84 @@
 "use client";
 
-import { useState } from "react";
 import Link from "next/link";
 import { motion } from "framer-motion";
 import styles from "./page.module.scss";
+import { FiPhone } from "react-icons/fi";
 
 export default function RSVPPage() {
-  const [formData, setFormData] = useState({
-    name: "",
-    email: "",
-    phone: "",
-    attending: "",
-    guests: 1,
-    dietaryRestrictions: "",
-    message: "",
-  });
+  // RSVP contacts
+  const rsvpContacts = [
+    { name: "Zubaidah", phone: "+2348103018303" },
+    { name: "Tosin", phone: "+2349014371462" },
+  ];
 
-  const [isSubmitted, setIsSubmitted] = useState(false);
+  //   if (isSubmitted) {
+  //     return (
+  //       <div className={styles.rsvpPage}>
+  //         <nav className={styles.navigation}>
+  //           <div className={styles.navContainer}>
+  //             <div className={styles.logo}>
+  //               <Link href="/">
+  //                 <h2>Oluwaseun & Lateefah</h2>
+  //               </Link>
+  //             </div>
+  //             <div className={styles.navLinks}>
+  //               <Link href="/" className={styles.navLink}>
+  //                 Home
+  //               </Link>
+  //               <Link href="/wedding-party" className={styles.navLink}>
+  //                 Wedding Party
+  //               </Link>
+  //               <Link href="/gallery" className={styles.navLink}>
+  //                 Gallery
+  //               </Link>
+  //               <Link
+  //                 href="/rsvp"
+  //                 className={`${styles.navLink} ${styles.active}`}
+  //               >
+  //                 RSVP
+  //               </Link>
+  //             </div>
+  //           </div>
+  //         </nav>
 
-  const handleInputChange = (
-    e: React.ChangeEvent<
-      HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement
-    >
-  ) => {
-    const { name, value } = e.target;
-    setFormData((prev) => ({
-      ...prev,
-      [name]: value,
-    }));
-  };
-
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    console.log("RSVP submitted:", formData);
-    setIsSubmitted(true);
-  };
-
-  if (isSubmitted) {
-    return (
-      <div className={styles.rsvpPage}>
-        <nav className={styles.navigation}>
-          <div className={styles.navContainer}>
-            <div className={styles.logo}>
-              <Link href="/">
-                <h2>Oluwaseun & Lateefah</h2>
-              </Link>
-            </div>
-            <div className={styles.navLinks}>
-              <Link href="/" className={styles.navLink}>
-                Home
-              </Link>
-              <Link href="/wedding-party" className={styles.navLink}>
-                Wedding Party
-              </Link>
-              <Link href="/gallery" className={styles.navLink}>
-                Gallery
-              </Link>
-              <Link
-                href="/rsvp"
-                className={`${styles.navLink} ${styles.active}`}
-              >
-                RSVP
-              </Link>
-            </div>
-          </div>
-        </nav>
-
-        <section className={styles.successSection}>
-          <div className={styles.container}>
-            <motion.div
-              initial={{ opacity: 0, y: 30 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8 }}
-              className={styles.successContent}
-            >
-              <div className={styles.successIcon}>✓</div>
-              <h1>Thank You!</h1>
-              <p>
-                Your RSVP has been successfully submitted. We can't wait to
-                celebrate with you!
-              </p>
-              <Link href="/" className={styles.backButton}>
-                Back to Home
-              </Link>
-            </motion.div>
-          </div>
-        </section>
-      </div>
-    );
-  }
+  //         <section className={styles.successSection}>
+  //           <div className={styles.container}>
+  //             <motion.div
+  //               initial={{ opacity: 0, y: 30 }}
+  //               animate={{ opacity: 1, y: 0 }}
+  //               transition={{ duration: 0.8 }}
+  //               className={styles.successContent}
+  //             >
+  //               <div className={styles.successIcon}>✓</div>
+  //               <h1>Thank You!</h1>
+  //               <p>
+  //                 Your RSVP has been successfully submitted. We can&apos;t wait to
+  //                 celebrate with you!
+  //               </p>
+  //               <div className={styles.rsvpContactsBox}>
+  //                 <h3>RSVP Contacts</h3>
+  //                 <div className={styles.rsvpContacts}>
+  //                   {rsvpContacts.map((c) => (
+  //                     <a
+  //                       key={c.phone}
+  //                       href={`tel:${c.phone}`}
+  //                       className={styles.rsvpContact}
+  //                     >
+  //                       <FiPhone /> {c.name}: {c.phone}
+  //                     </a>
+  //                   ))}
+  //                 </div>
+  //               </div>
+  //               <Link href="/" className={styles.backButton}>
+  //                 Back to Home
+  //               </Link>
+  //             </motion.div>
+  //           </div>
+  //         </section>
+  //       </div>
+  //     );
+  //   }
 
   return (
     <div className={styles.rsvpPage}>
@@ -150,120 +140,48 @@ export default function RSVPPage() {
           >
             <div className={styles.formHeader}>
               <h2>Will you attend?</h2>
-              <p>Please respond by December 1st, 2025</p>
             </div>
 
-            <form onSubmit={handleSubmit} className={styles.rsvpForm}>
-              <div className={styles.formRow}>
-                <div className={styles.formGroup}>
-                  <label htmlFor="name">Full Name *</label>
-                  <input
-                    type="text"
-                    id="name"
-                    name="name"
-                    value={formData.name}
-                    onChange={handleInputChange}
-                    required
-                    placeholder="Enter your full name"
-                  />
-                </div>
-                <div className={styles.formGroup}>
-                  <label htmlFor="email">Email Address *</label>
-                  <input
-                    type="email"
-                    id="email"
-                    name="email"
-                    value={formData.email}
-                    onChange={handleInputChange}
-                    required
-                    placeholder="Enter your email address"
-                  />
-                </div>
+            <form className={styles.rsvpForm}>
+              {/* <p className={styles.hashtag}>#SeunWedsLateefah</p> */}
+              <div className={styles.dates}>
+                <p>
+                  <b>Traditional:</b> 27th June 2025, 4PM
+                  <br />
+                  Lane 3, Workers Village, Zone 8, Lokoja, Kogi State
+                </p>
+                <p>
+                  <b>Nikkah:</b> 28th June 2025, 10AM
+                  <br />
+                  Secretariate Mosque, Zone 8, Lokoja, Kogi State
+                </p>
+                <p>
+                  <b>Reception:</b> 28th June 2025, 11AM
+                  <br />
+                  Ayonete Hotel, Zone 8 Junction, Lokoja, Kogi State
+                </p>
               </div>
-
-              <div className={styles.formRow}>
-                <div className={styles.formGroup}>
-                  <label htmlFor="phone">Phone Number</label>
-                  <input
-                    type="tel"
-                    id="phone"
-                    name="phone"
-                    value={formData.phone}
-                    onChange={handleInputChange}
-                    placeholder="Enter your phone number"
-                  />
-                </div>
-                <div className={styles.formGroup}>
-                  <label htmlFor="attending">Will you attend? *</label>
-                  <select
-                    id="attending"
-                    name="attending"
-                    value={formData.attending}
-                    onChange={handleInputChange}
-                    required
-                  >
-                    <option value="">Please select...</option>
-                    <option value="yes">Yes, I will attend</option>
-                    <option value="no">No, I cannot attend</option>
-                  </select>
-                </div>
+              <div className={styles.rsvpBox}>
+                <span>
+                  <b>RSVP:</b> Zubaidah (+234 810 301 8303), Tosin (+234 901 437
+                  1462)
+                </span>
               </div>
-
-              {formData.attending === "yes" && (
-                <>
-                  <div className={styles.formRow}>
-                    <div className={styles.formGroup}>
-                      <label htmlFor="guests">Number of Guests</label>
-                      <select
-                        id="guests"
-                        name="guests"
-                        value={formData.guests}
-                        onChange={handleInputChange}
-                      >
-                        <option value={1}>1 Guest</option>
-                        <option value={2}>2 Guests</option>
-                        <option value={3}>3 Guests</option>
-                        <option value={4}>4 Guests</option>
-                      </select>
-                    </div>
-                    <div className={styles.formGroup}>
-                      <label htmlFor="dietaryRestrictions">
-                        Dietary Restrictions
-                      </label>
-                      <input
-                        type="text"
-                        id="dietaryRestrictions"
-                        name="dietaryRestrictions"
-                        value={formData.dietaryRestrictions}
-                        onChange={handleInputChange}
-                        placeholder="Any dietary restrictions?"
-                      />
-                    </div>
-                  </div>
-                </>
-              )}
-
-              <div className={styles.formGroup}>
-                <label htmlFor="message">Message (Optional)</label>
-                <textarea
-                  id="message"
-                  name="message"
-                  value={formData.message}
-                  onChange={handleInputChange}
-                  placeholder="Share a message or special request..."
-                  rows={4}
-                />
-              </div>
-
-              <motion.button
-                type="submit"
-                className={styles.submitButton}
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-              >
-                Send RSVP
-              </motion.button>
             </form>
+            <div className={styles.rsvpContactsBox}>
+              <h3>RSVP Contacts</h3>
+              <div className={styles.rsvpContacts}>
+                {rsvpContacts.map((c) => (
+                  <a
+                    key={c.phone}
+                    href={`tel:${c.phone}`}
+                    className={styles.rsvpContact}
+                  >
+                    <FiPhone /> {c.name}: {c.phone}
+                  </a>
+                ))}
+              </div>
+            </div>
           </motion.div>
         </div>
       </section>
@@ -281,18 +199,17 @@ export default function RSVPPage() {
             <h2>Event Details</h2>
             <div className={styles.events}>
               <div className={styles.event}>
-                <h3>Ceremony & Reception</h3>
-                <p className={styles.date}>December 20, 2025</p>
-                <p className={styles.time}>4:00 PM - 11:00 PM</p>
-                <p className={styles.location}>Abidjan, Côte d'Ivoire</p>
-                <p className={styles.venue}>Grand Hotel Abidjan</p>
+                <h3>Nikkah</h3>
+                <p className={styles.date}>28th June 2025, 10AM</p>
+                <p className={styles.location}>Lokoja, Kogi State</p>
+                <p className={styles.venue}>Secretariate Mosque, Zone 8 </p>
               </div>
               <div className={styles.event}>
                 <h3>Reception</h3>
-                <p className={styles.date}>December 27, 2025</p>
-                <p className={styles.time}>6:00 PM - 12:00 AM</p>
-                <p className={styles.location}>Lagos, Nigeria</p>
-                <p className={styles.venue}>Eko Hotel & Suites</p>
+                <p className={styles.date}>28th June 2025, 11AM</p>
+
+                <p className={styles.location}>Lokoja, Kogi State</p>
+                <p className={styles.venue}>Ayonete Hotel</p>
               </div>
             </div>
           </motion.div>

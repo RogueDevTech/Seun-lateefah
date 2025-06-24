@@ -496,3 +496,125 @@
     }
   }
 }
+
+@media (max-width: 600px) {
+  .navigation {
+    display: none !important;
+  }
+}
+
+.rsvpContactsBox {
+  margin: 2.5rem 0 1.5rem 0;
+  text-align: center;
+  h3 {
+    font-family: var(--font-playfair-display), serif;
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: #e74c3c;
+    margin-bottom: 1rem;
+    letter-spacing: 1px;
+  }
+}
+.rsvpContacts {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  align-items: center;
+  justify-content: center;
+}
+.rsvpContact {
+  display: flex;
+  align-items: center;
+  gap: 0.7rem;
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #2c3e50;
+  background: #fffbe7;
+  border-radius: 18px;
+  padding: 0.7rem 1.2rem;
+  box-shadow: 0 2px 10px #f9d29d33;
+  transition: background 0.2s, color 0.2s, box-shadow 0.2s;
+  text-decoration: none;
+  border: 2px solid #f9d29d;
+}
+.rsvpContact:hover,
+.rsvpContact:focus {
+  background: #f9d29d;
+  color: #e74c3c;
+  box-shadow: 0 4px 18px #f9d29d66;
+}
+
+// RSVP form improvements
+.formContainer {
+  background: #fffbe7;
+  border-radius: 24px;
+  box-shadow: 0 8px 32px #f9d29d33;
+  padding: 2.5rem 2rem 2rem 2rem;
+  margin-top: 2rem;
+}
+.rsvpForm {
+  margin-bottom: 2rem;
+}
+.submitButton {
+  background: linear-gradient(90deg, #e74c3c 60%, #f9d29d 100%);
+  color: #fff;
+  font-weight: 700;
+  font-size: 1.1rem;
+  border: none;
+  border-radius: 12px;
+  padding: 1rem 2.5rem;
+  margin-top: 1.2rem;
+  box-shadow: 0 2px 10px #f9d29d33;
+  transition: background 0.2s, color 0.2s, box-shadow 0.2s;
+}
+.submitButton:hover,
+.submitButton:focus {
+  background: #e74c3c;
+  color: #fffbe7;
+  box-shadow: 0 4px 18px #f9d29d66;
+}
+
+// Success message improvements
+.successContent {
+  background: #fffbe7;
+  border-radius: 24px;
+  box-shadow: 0 8px 32px #f9d29d33;
+  padding: 2.5rem 2rem 2rem 2rem;
+  margin-top: 2rem;
+  text-align: center;
+}
+.successIcon {
+  color: #2ecc71;
+  background: #fff;
+  border-radius: 50%;
+  width: 70px;
+  height: 70px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2.5rem;
+  margin: 0 auto 1.5rem auto;
+  box-shadow: 0 2px 10px #2ecc7133;
+}
+
+@media (max-width: 600px) {
+  .formContainer,
+  .successContent {
+    padding: 1.2rem 0.5rem 1.2rem 0.5rem;
+    margin-top: 1rem;
+  }
+  .rsvpContactsBox {
+    margin: 1.5rem 0 1rem 0;
+    h3 {
+      font-size: 1rem;
+    }
+  }
+  .rsvpContact {
+    font-size: 1rem;
+    padding: 0.6rem 1rem;
+  }
+  .submitButton {
+    font-size: 1rem;
+    padding: 0.8rem 1.5rem;
+  }
+}

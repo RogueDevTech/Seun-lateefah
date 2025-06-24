@@ -243,9 +243,9 @@
       }
 
       .storyContent {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        gap: 4rem;
+        // display: grid;
+        // grid-template-columns: 1fr 1fr;
+        // gap: 4rem;
         max-width: 1000px;
         margin: 0 auto;
 
@@ -383,10 +383,10 @@
           font-size: 2.5rem;
         }
 
-        .storyContent {
-          grid-template-columns: 1fr;
-          gap: 2rem;
-        }
+        // .storyContent {
+        //   grid-template-columns: 1fr;
+        //   gap: 2rem;
+        // }
       }
     }
   }
@@ -568,15 +568,15 @@
         h2 {
           font-size: 1.5rem;
         }
-        .storyContent {
-          grid-template-columns: 1fr;
-          gap: 1rem;
-          .storyText {
-            p {
-              font-size: 0.95rem;
-            }
-          }
-        }
+        // .storyContent {
+        //   grid-template-columns: 1fr;
+        //   gap: 1rem;
+        //   .storyText {
+        //     p {
+        //       font-size: 0.95rem;
+        //     }
+        //   }
+        // }
       }
     }
   }
@@ -585,4 +585,51 @@
 // Desktop: hide menu button
 .menuButton {
   display: none;
+}
+
+.heroOverlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  pointer-events: none;
+  // outline: 2px solid red;
+  .heroContent {
+    pointer-events: auto;
+    background: rgba(0, 0, 0, 0.32);
+    border-radius: 32px;
+    padding: 2.5rem 2.5rem 2rem 2.5rem;
+    box-shadow: 0 8px 32px #0002;
+    text-align: center;
+    width: 100%;
+    max-width: 100%;
+    height: 100%;
+    max-height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    h1 {
+      font-size: 2.5rem;
+      font-weight: 700;
+      color: #fff;
+      text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.25);
+      margin-bottom: 1.5rem;
+      letter-spacing: 2px;
+      text-align: center;
+    }
+  }
+}
+
+@media (max-width: 600px) {
+  .heroOverlay .heroContent {
+    padding: 1.2rem 0.5rem 1.2rem 0.5rem;
+    border-radius: 18px;
+    // max-width: 98vw;
+  }
 }
