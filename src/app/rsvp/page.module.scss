@@ -1,0 +1,498 @@
+.rsvpPage {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+}
+
+// Navigation Styles
+.navigation {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+  transition: all 0.3s ease;
+
+  .navContainer {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 1rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    .logo {
+      h2 {
+        font-family: "Playfair Display", serif;
+        font-size: 1.5rem;
+        font-weight: 600;
+        color: #2c3e50;
+        margin: 0;
+        text-decoration: none;
+        cursor: pointer;
+        transition: color 0.3s ease;
+
+        &:hover {
+          color: #e74c3c;
+        }
+      }
+    }
+
+    .navLinks {
+      display: flex;
+      gap: 2rem;
+      align-items: center;
+
+      .navLink {
+        text-decoration: none;
+        color: #2c3e50;
+        font-weight: 500;
+        font-size: 0.95rem;
+        transition: all 0.3s ease;
+        position: relative;
+
+        &:hover {
+          color: #e74c3c;
+          transform: translateY(-2px);
+        }
+
+        &.active {
+          color: #e74c3c;
+          font-weight: 600;
+        }
+
+        &::after {
+          content: "";
+          position: absolute;
+          bottom: -5px;
+          left: 0;
+          width: 0;
+          height: 2px;
+          background: #e74c3c;
+          transition: width 0.3s ease;
+        }
+
+        &:hover::after,
+        &.active::after {
+          width: 100%;
+        }
+      }
+    }
+  }
+}
+
+// Hero Section
+.heroSection {
+  height: 50vh;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: white;
+  position: relative;
+  overflow: hidden;
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: url("/assets/images/hero-pattern.png") repeat;
+    opacity: 0.1;
+  }
+
+  .heroContent {
+    position: relative;
+    z-index: 2;
+    max-width: 800px;
+    padding: 2rem;
+
+    .heroTitle {
+      font-family: "Playfair Display", serif;
+      font-size: 4rem;
+      font-weight: 700;
+      margin-bottom: 1rem;
+      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+    }
+
+    .heroSubtitle {
+      font-size: 1.3rem;
+      font-weight: 400;
+      line-height: 1.6;
+      text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+    }
+  }
+}
+
+// Container
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+// Form Section
+.formSection {
+  padding: 4rem 0;
+  background: white;
+
+  .formContainer {
+    max-width: 800px;
+    margin: 0 auto;
+    background: white;
+    border-radius: 20px;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+
+    .formHeader {
+      background: linear-gradient(135deg, #e74c3c, #c0392b);
+      color: white;
+      padding: 3rem 2rem;
+      text-align: center;
+
+      h2 {
+        font-family: "Playfair Display", serif;
+        font-size: 2.5rem;
+        font-weight: 700;
+        margin-bottom: 1rem;
+      }
+
+      p {
+        font-size: 1.1rem;
+        opacity: 0.9;
+      }
+    }
+
+    .rsvpForm {
+      padding: 3rem 2rem;
+
+      .formRow {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 2rem;
+        margin-bottom: 2rem;
+      }
+
+      .formGroup {
+        margin-bottom: 2rem;
+
+        label {
+          display: block;
+          font-weight: 600;
+          color: #2c3e50;
+          margin-bottom: 0.5rem;
+          font-size: 0.95rem;
+        }
+
+        input,
+        select,
+        textarea {
+          width: 100%;
+          padding: 1rem;
+          border: 2px solid #e0e0e0;
+          border-radius: 10px;
+          font-size: 1rem;
+          transition: all 0.3s ease;
+          background: #f8f9fa;
+
+          &:focus {
+            outline: none;
+            border-color: #e74c3c;
+            background: white;
+            box-shadow: 0 0 0 3px rgba(231, 76, 60, 0.1);
+          }
+
+          &::placeholder {
+            color: #7f8c8d;
+          }
+        }
+
+        textarea {
+          resize: vertical;
+          min-height: 120px;
+        }
+      }
+
+      .submitButton {
+        width: 100%;
+        background: linear-gradient(135deg, #e74c3c, #c0392b);
+        color: white;
+        padding: 1.2rem;
+        border: none;
+        border-radius: 10px;
+        font-size: 1.1rem;
+        font-weight: 600;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        box-shadow: 0 4px 15px rgba(231, 76, 60, 0.3);
+
+        &:hover {
+          transform: translateY(-2px);
+          box-shadow: 0 6px 20px rgba(231, 76, 60, 0.4);
+        }
+      }
+    }
+  }
+}
+
+// Success Section
+.successSection {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+
+  .successContent {
+    text-align: center;
+    max-width: 600px;
+    padding: 2rem;
+
+    .successIcon {
+      font-size: 4rem;
+      color: #2ecc71;
+      margin-bottom: 2rem;
+      background: white;
+      width: 100px;
+      height: 100px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 2rem;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    }
+
+    h1 {
+      font-family: "Playfair Display", serif;
+      font-size: 3rem;
+      font-weight: 700;
+      margin-bottom: 1rem;
+      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+    }
+
+    p {
+      font-size: 1.2rem;
+      line-height: 1.6;
+      margin-bottom: 2rem;
+      text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+    }
+
+    .backButton {
+      display: inline-block;
+      background: white;
+      color: #2c3e50;
+      padding: 1rem 2rem;
+      border-radius: 50px;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 1.1rem;
+      transition: all 0.3s ease;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+
+      &:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+        background: #f8f9fa;
+      }
+    }
+  }
+}
+
+// Event Details Section
+.eventDetailsSection {
+  padding: 6rem 0;
+  background: #f8f9fa;
+
+  .eventDetails {
+    text-align: center;
+
+    h2 {
+      font-family: "Playfair Display", serif;
+      font-size: 3rem;
+      font-weight: 700;
+      color: #2c3e50;
+      margin-bottom: 3rem;
+      position: relative;
+
+      &::after {
+        content: "";
+        position: absolute;
+        bottom: -10px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 80px;
+        height: 3px;
+        background: linear-gradient(135deg, #e74c3c, #f39c12);
+      }
+    }
+
+    .events {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 3rem;
+      max-width: 800px;
+      margin: 0 auto;
+
+      .event {
+        background: white;
+        padding: 2.5rem;
+        border-radius: 20px;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        transition: all 0.3s ease;
+
+        &:hover {
+          transform: translateY(-5px);
+          box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+        }
+
+        h3 {
+          font-family: "Playfair Display", serif;
+          font-size: 1.8rem;
+          font-weight: 600;
+          color: #2c3e50;
+          margin-bottom: 1.5rem;
+        }
+
+        .date {
+          font-size: 1.3rem;
+          font-weight: 600;
+          color: #e74c3c;
+          margin-bottom: 0.5rem;
+        }
+
+        .time {
+          font-size: 1.1rem;
+          color: #7f8c8d;
+          margin-bottom: 1rem;
+        }
+
+        .location {
+          font-size: 1rem;
+          color: #34495e;
+          font-weight: 500;
+          margin-bottom: 0.5rem;
+        }
+
+        .venue {
+          font-size: 1.1rem;
+          color: #2c3e50;
+          font-weight: 600;
+        }
+      }
+    }
+  }
+}
+
+// Responsive Design
+@media (max-width: 768px) {
+  .navigation {
+    .navContainer {
+      padding: 1rem;
+
+      .navLinks {
+        gap: 1rem;
+
+        .navLink {
+          font-size: 0.9rem;
+        }
+      }
+    }
+  }
+
+  .heroSection {
+    height: 40vh;
+
+    .heroContent {
+      padding: 1rem;
+
+      .heroTitle {
+        font-size: 2.5rem;
+      }
+
+      .heroSubtitle {
+        font-size: 1.1rem;
+      }
+    }
+  }
+
+  .container {
+    padding: 0 1rem;
+  }
+
+  .formSection {
+    padding: 2rem 0;
+
+    .formContainer {
+      .formHeader {
+        padding: 2rem 1rem;
+
+        h2 {
+          font-size: 2rem;
+        }
+
+        p {
+          font-size: 1rem;
+        }
+      }
+
+      .rsvpForm {
+        padding: 2rem 1rem;
+
+        .formRow {
+          grid-template-columns: 1fr;
+          gap: 1rem;
+        }
+      }
+    }
+  }
+
+  .successSection {
+    .successContent {
+      padding: 1rem;
+
+      .successIcon {
+        width: 80px;
+        height: 80px;
+        font-size: 3rem;
+      }
+
+      h1 {
+        font-size: 2.5rem;
+      }
+
+      p {
+        font-size: 1.1rem;
+      }
+    }
+  }
+
+  .eventDetailsSection {
+    padding: 4rem 0;
+
+    .eventDetails {
+      h2 {
+        font-size: 2.5rem;
+      }
+
+      .events {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+
+        .event {
+          padding: 2rem;
+
+          h3 {
+            font-size: 1.5rem;
+          }
+        }
+      }
+    }
+  }
+}

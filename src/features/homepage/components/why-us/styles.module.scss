@@ -1,0 +1,377 @@
+@import "../../../../styles/index.scss";
+
+.wrapper{
+    display: flex;
+    justify-content: space-between;
+    padding: 50px 0px;
+
+}
+
+.installment{
+    width: 50%;
+
+    .installment_text{
+
+        p{
+            font-family: Montserrat;
+            font-weight: 600;
+            font-size: 16px;
+            line-height: 100%;
+            letter-spacing: 0%;
+            text-align: left;
+            color: #C40002;
+
+            span{
+                font-family: Montserrat;
+                font-weight: 500;
+                font-size: 16px;
+                line-height: 158%;
+                letter-spacing: 0%;
+                color: #717171;
+            }
+        }
+
+        h1{
+            font-family: Helvetica Neue;
+            font-weight: 500;
+            font-size: 52px;
+            line-height: 114.99999999999999%;
+            letter-spacing: 0%;
+            color: #191919;
+            margin: 10px 0px 15px;
+        }
+    }
+
+    .man_box{
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        margin-top: 40px;
+        margin-bottom: 10px;
+
+        .man_image{
+
+            // .man_img{
+            // }
+        }
+    }
+
+    .start{
+
+        h3{
+            font-family: Montserrat;
+            font-weight: 700;
+            font-size: 16px;
+            line-height: 158%;
+            letter-spacing: 0%;
+            color: #3B3B3B;
+        }
+    }
+}
+
+.affordability{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    // border: 2px solid green;
+
+    .affordability_box{
+        background-image: url("../../../../../public/assets/images/pin-box.svg");
+        background-position: center;
+        background-size: cover;
+        background-repeat: no-repeat;
+        width: 100%;
+        max-width: 548px;
+        height: 170px;
+        padding: 20px;
+        // border: 2px solid red;
+
+        h6{
+            font-family: Open Sans;
+            font-weight: 700;
+            font-size: 17px;
+            line-height: 130%;
+            letter-spacing: 0px;
+            text-transform: uppercase;
+            color: #000;
+            margin-left: 90px;
+        }
+
+        p{
+            font-family: Open Sans;
+            font-weight: 400;
+            font-size: 15px;
+            line-height: 155%;
+            letter-spacing: 0px;
+            color: #8E8E8E;
+            margin-top: 30px;
+        }
+        
+    }
+
+    .affordability_box_two{
+        background-image: url("../../../../../public/assets/images/second-frame.svg");
+        background-position: center;
+        background-size: cover;
+        background-repeat: no-repeat;
+        width: 100%;
+        max-width: 548px;
+        height: 170px;
+        padding: 20px;
+        // border: 2px solid red;
+
+        h6{
+            font-family: Open Sans;
+            font-weight: 700;
+            font-size: 17px;
+            line-height: 130%;
+            letter-spacing: 0px;
+            text-transform: uppercase;
+            color: #000;
+            margin-left: 90px;
+        }
+
+        p{
+            font-family: Open Sans;
+            font-weight: 400;
+            font-size: 15px;
+            line-height: 155%;
+            letter-spacing: 0px;
+            color: #8E8E8E;
+            margin-top: 30px;
+        }
+        
+    }
+
+    .affordability_box_three{
+        background-image: url("../../../../../public/assets/images/third-frame.svg");
+        background-position: center;
+        background-size: cover;
+        background-repeat: no-repeat;
+        width: 100%;
+        max-width: 548px;
+        height: 170px;
+        padding: 20px;
+        // border: 2px solid red;
+
+        h6{
+            font-family: Open Sans;
+            font-weight: 700;
+            font-size: 17px;
+            line-height: 130%;
+            letter-spacing: 0px;
+            text-transform: uppercase;
+            color: #000;
+            margin-left: 90px;
+        }
+
+        p{
+            font-family: Open Sans;
+            font-weight: 400;
+            font-size: 15px;
+            line-height: 155%;
+            letter-spacing: 0px;
+            color: #8E8E8E;
+            margin-top: 30px;
+        }
+        
+    }
+}
+
+@include responsive("mobile"){
+
+    .wrapper{
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        padding: 10px 0px;
+    
+    }
+    
+    .installment{
+        width: 100%;
+    
+        .installment_text{
+    
+            p{
+                font-family: Montserrat;
+                font-weight: 600;
+                font-size: 15px;
+                line-height: 100%;
+                letter-spacing: 0%;
+                text-align: left;
+                color: #C40002;
+    
+                span{
+                    font-family: Montserrat;
+                    font-weight: 500;
+                    font-size: 14px;
+                    line-height: 158%;
+                    letter-spacing: 0%;
+                    color: #717171;
+                }
+            }
+    
+            h1{
+                font-family: Helvetica Neue;
+                font-weight: 500;
+                font-size: 25px;
+                line-height: 114.99999999999999%;
+                letter-spacing: 0%;
+                color: #191919;
+                margin: 10px 0px 15px;
+            }
+        }
+    
+        .man_box{
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-top: 40px;
+            margin-bottom: 10px;
+    
+            .man_image{
+    
+                .man_img{
+                    width: 92px;
+                    height: 70px;
+                }
+            }
+        }
+    
+        .start{
+    
+            h3{
+                font-family: Montserrat;
+                font-weight: 700;
+                font-size: 14px;
+                line-height: 158%;
+                letter-spacing: 0%;
+                color: #3B3B3B;
+            }
+        }
+    }
+    
+    .affordability{
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        width: 100%;
+        margin-top: 25px;
+        // border: 2px solid red;
+        // display: none;
+        
+    
+        .affordability_box{
+            background-image: url("../../../../../public/assets/images/pin-box.svg");
+            // background-position: center;
+            background-position: inherit;
+            background-size: cover;
+            background-repeat: no-repeat;
+            width: 100%;
+            // max-width: 342px;
+            // height: 206px;
+            height: 160px;
+            padding: 20px 20px;
+            // border: 2px solid green;
+    
+            h6{
+                font-family: Open Sans;
+                font-weight: 700;
+                font-size: 15px;
+                line-height: 130%;
+                letter-spacing: 0px;
+                text-transform: uppercase;
+                color: #000;
+                margin-left: 90px;
+            }
+    
+            p{
+                font-family: Open Sans;
+                font-weight: 400;
+                font-size: 13px;
+                line-height: 155%;
+                letter-spacing: 0px;
+                color: #8E8E8E;
+                margin-top: 15px;
+            }
+            
+        }
+
+        .affordability_box_two{
+            background-image: url("../../../../../public/assets/images/second-frame.svg");
+            // background-position: center;
+            background-position: inherit;
+            background-size: cover;
+            background-repeat: no-repeat;
+            width: 100%;
+            // max-width: 342px;
+            // height: 206px;
+            height: 160px;
+            padding: 20px 20px;
+            // border: 2px solid green;
+    
+            h6{
+                font-family: Open Sans;
+                font-weight: 700;
+                font-size: 15px;
+                line-height: 130%;
+                letter-spacing: 0px;
+                text-transform: uppercase;
+                color: #000;
+                margin-left: 90px;
+            }
+    
+            p{
+                font-family: Open Sans;
+                font-weight: 400;
+                font-size: 13px;
+                line-height: 155%;
+                letter-spacing: 0px;
+                color: #8E8E8E;
+                margin-top: 15px;
+            }
+            
+        }
+
+        .affordability_box_three{
+            background-image: url("../../../../../public/assets/images/third-frame.svg");
+            // background-position: center;
+            background-position: inherit;
+            background-size: cover;
+            background-repeat: no-repeat;
+            width: 100%;
+            // max-width: 342px;
+            // height: 206px;
+            height: 160px;
+            padding: 20px 20px;
+            // border: 2px solid green;
+    
+            h6{
+                font-family: Open Sans;
+                font-weight: 700;
+                font-size: 15px;
+                line-height: 130%;
+                letter-spacing: 0px;
+                text-transform: uppercase;
+                color: #000;
+                margin-left: 90px;
+            }
+    
+            p{
+                font-family: Open Sans;
+                font-weight: 400;
+                font-size: 13px;
+                line-height: 155%;
+                letter-spacing: 0px;
+                color: #8E8E8E;
+                margin-top: 15px;
+            }
+            
+        }
+    }
+}
+
+
+
+  

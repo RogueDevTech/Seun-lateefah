@@ -1,0 +1,403 @@
+// .page {
+// border: 2px solid green;
+// }
+
+.weddingHomepage {
+  // min-height: 100vh;
+  // background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+}
+
+// Navigation Styles
+.navigation {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+  transition: all 0.3s ease;
+
+  .navContainer {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 1rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    .logo {
+      h2 {
+        font-family: "Playfair Display", serif;
+        font-size: 1.5rem;
+        font-weight: 600;
+        color: #2c3e50;
+        margin: 0;
+      }
+    }
+
+    .navLinks {
+      display: flex;
+      gap: 2rem;
+      align-items: center;
+
+      .navLink {
+        text-decoration: none;
+        color: #2c3e50;
+        font-weight: 500;
+        font-size: 0.95rem;
+        transition: all 0.3s ease;
+        position: relative;
+
+        &:hover {
+          color: #e74c3c;
+          transform: translateY(-2px);
+        }
+
+        &::after {
+          content: "";
+          position: absolute;
+          bottom: -5px;
+          left: 0;
+          width: 0;
+          height: 2px;
+          background: #e74c3c;
+          transition: width 0.3s ease;
+        }
+
+        &:hover::after {
+          width: 100%;
+        }
+      }
+    }
+  }
+}
+
+// Hero Section Styles
+.heroSection {
+  height: 100vh;
+  // height: 100%;
+  position: relative;
+  overflow: hidden;
+
+  .scrollContainer {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    overflow: hidden;
+    // margin-top: 100px;
+
+    .scrollTrack {
+      display: flex;
+      height: 100%;
+      position: relative;
+      width: max-content; // Allow track to be as wide as needed
+    }
+
+    .scrollImage {
+      width: 35vw;
+      // width: 400px;
+      height: 100%;
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      position: relative;
+      flex-shrink: 0;
+
+      .overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: linear-gradient(
+          135deg,
+          rgba(0, 0, 0, 0.3) 0%,
+          rgba(0, 0, 0, 0.1) 50%,
+          rgba(0, 0, 0, 0.4) 100%
+        );
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        color: white;
+
+        .heroContent {
+          max-width: 800px;
+          padding: 2rem;
+
+          .mainTitle {
+            font-family: var(--font-playfair-display), serif;
+            font-size: 4rem;
+            font-weight: 700;
+            font-style: italic;
+            margin-bottom: 1.5rem;
+            letter-spacing: 2px;
+            color: #fff;
+            text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.25);
+          }
+
+          .coupleNames {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 2rem;
+            margin: 2.5rem 0 1.5rem 0;
+            h2 {
+              font-family: var(--font-dancing-script), cursive;
+              font-size: 3.5rem;
+              font-weight: 700;
+              color: #fffbe7;
+              letter-spacing: 2px;
+              margin: 0;
+              text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.18);
+            }
+            .andText {
+              font-family: var(--font-playfair-display), serif;
+              font-size: 2.2rem;
+              font-weight: 400;
+              color: #f9d29d;
+              font-style: italic;
+              margin: 0 1rem;
+            }
+          }
+
+          .hashtag {
+            font-family: var(--font-playfair-display), serif;
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: #f9d29d;
+            margin: 1.5rem 0 1rem 0;
+            letter-spacing: 1.5px;
+            text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.15);
+          }
+
+          .dates {
+            margin: 2rem 0;
+
+            p {
+              font-size: 1.1rem;
+              margin: 0.5rem 0;
+              font-weight: 400;
+              text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+            }
+          }
+
+          .rsvpButton {
+            display: inline-block;
+            background: linear-gradient(135deg, #e74c3c, #c0392b);
+            color: white;
+            padding: 1rem 3rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1.1rem;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(231, 76, 60, 0.3);
+            margin-top: 2rem;
+
+            &:hover {
+              transform: translateY(-3px);
+              box-shadow: 0 6px 20px rgba(231, 76, 60, 0.4);
+              background: linear-gradient(135deg, #c0392b, #e74c3c);
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+// Love Story Section
+.loveStorySection {
+  padding: 6rem 0;
+  background: white;
+
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+
+    .loveStory {
+      text-align: center;
+
+      h2 {
+        font-family: "Playfair Display", serif;
+        font-size: 3rem;
+        font-weight: 700;
+        color: #2c3e50;
+        margin-bottom: 3rem;
+        position: relative;
+
+        &::after {
+          content: "";
+          position: absolute;
+          bottom: -10px;
+          left: 50%;
+          transform: translateX(-50%);
+          width: 80px;
+          height: 3px;
+          background: linear-gradient(135deg, #e74c3c, #f39c12);
+        }
+      }
+
+      .storyContent {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 4rem;
+        max-width: 1000px;
+        margin: 0 auto;
+
+        .storyText {
+          text-align: left;
+
+          .flag {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+            display: block;
+          }
+
+          p {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            color: #34495e;
+            margin-bottom: 1.5rem;
+            font-weight: 400;
+
+            &:first-of-type {
+              font-weight: 600;
+              color: #2c3e50;
+              font-size: 1.2rem;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+// Quick Links Section
+.quickLinksSection {
+  padding: 4rem 0;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+
+    .quickLinks {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 2rem;
+
+      .quickLink {
+        background: white;
+        border-radius: 20px;
+        padding: 2rem;
+        text-decoration: none;
+        color: inherit;
+        transition: all 0.3s ease;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        text-align: center;
+
+        &:hover {
+          transform: translateY(-10px);
+          box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+        }
+
+        .quickLinkContent {
+          h3 {
+            font-family: "Playfair Display", serif;
+            font-size: 1.8rem;
+            font-weight: 600;
+            color: #2c3e50;
+            margin-bottom: 1rem;
+          }
+
+          p {
+            font-size: 1rem;
+            color: #7f8c8d;
+            line-height: 1.6;
+            margin: 0;
+          }
+        }
+      }
+    }
+  }
+}
+
+// Responsive Design
+@media (max-width: 768px) {
+  .navigation {
+    .navContainer {
+      padding: 1rem;
+
+      .navLinks {
+        gap: 1rem;
+
+        .navLink {
+          font-size: 0.9rem;
+        }
+      }
+    }
+  }
+
+  .heroSection {
+    .scrollContainer {
+      .scrollImage {
+        .overlay {
+          .heroContent {
+            padding: 1rem;
+
+            .mainTitle {
+              font-size: 2.5rem;
+            }
+
+            .coupleNames {
+              h2 {
+                font-size: 2rem;
+              }
+            }
+
+            .dates {
+              p {
+                font-size: 1rem;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .loveStorySection {
+    padding: 4rem 0;
+
+    .container {
+      padding: 0 1rem;
+
+      .loveStory {
+        h2 {
+          font-size: 2.5rem;
+        }
+
+        .storyContent {
+          grid-template-columns: 1fr;
+          gap: 2rem;
+        }
+      }
+    }
+  }
+
+  .quickLinksSection {
+    .container {
+      padding: 0 1rem;
+
+      .quickLinks {
+        grid-template-columns: 1fr;
+      }
+    }
+  }
+}
