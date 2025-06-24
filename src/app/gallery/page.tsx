@@ -6,14 +6,14 @@ import { motion, AnimatePresence } from "framer-motion";
 import styles from "./page.module.scss";
 
 const galleryImages = [
-  {
-    id: 3,
-    src: "https://images.unsplash.com/photo-1519225421980-715cb0215aed?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80",
-    alt: "Vacation Together",
-    category: "travel",
-    width: 1,
-    height: 2,
-  },
+  // {
+  //   id: 3,
+  //   src: "https://images.unsplash.com/photo-1519225421980-715cb0215aed?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80",
+  //   alt: "Vacation Together",
+  //   category: "travel",
+  //   width: 1,
+  //   height: 2,
+  // },
   {
     id: 1,
     src: "https://res.cloudinary.com/dwozuizmv/image/upload/v1750763652/WhatsApp_Image_2025-06-24_at_10.10.27_AM_c03ffi.jpg",
@@ -30,14 +30,14 @@ const galleryImages = [
     width: 1,
     height: 1,
   },
-  {
-    id: 5,
-    src: "https://images.unsplash.com/photo-1519225421980-715cb0215aed?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80",
-    alt: "Wedding Planning",
-    category: "wedding",
-    width: 2,
-    height: 1,
-  },
+  // {
+  //   id: 5,
+  //   src: "https://images.unsplash.com/photo-1519225421980-715cb0215aed?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80",
+  //   alt: "Wedding Planning",
+  //   category: "wedding",
+  //   width: 2,
+  //   height: 1,
+  // },
 
   {
     id: 2,
@@ -47,38 +47,38 @@ const galleryImages = [
     width: 1,
     height: 1,
   },
-  {
-    id: 6,
-    src: "https://images.unsplash.com/photo-1511285560929-80b456fea0bc?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2069&q=80",
-    alt: "Family Gathering",
-    category: "family",
-    width: 1,
-    height: 1,
-  },
-  {
-    id: 7,
-    src: "https://images.unsplash.com/photo-1519741497674-611481863552?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80",
-    alt: "Holiday Celebration",
-    category: "travel",
-    width: 1,
-    height: 1,
-  },
-  {
-    id: 8,
-    src: "https://images.unsplash.com/photo-1511795409834-ef04bbd61622?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2069&q=80",
-    alt: "Wedding Venue Visit",
-    category: "wedding",
-    width: 2,
-    height: 2,
-  },
-  {
-    id: 9,
-    src: "https://images.unsplash.com/photo-1519225421980-715cb0215aed?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80",
-    alt: "Dress Shopping",
-    category: "wedding",
-    width: 1,
-    height: 1,
-  },
+  // {
+  //   id: 6,
+  //   src: "https://images.unsplash.com/photo-1511285560929-80b456fea0bc?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2069&q=80",
+  //   alt: "Family Gathering",
+  //   category: "family",
+  //   width: 1,
+  //   height: 1,
+  // },
+  // {
+  //   id: 7,
+  //   src: "https://images.unsplash.com/photo-1519741497674-611481863552?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80",
+  //   alt: "Holiday Celebration",
+  //   category: "travel",
+  //   width: 1,
+  //   height: 1,
+  // },
+  // {
+  //   id: 8,
+  //   src: "https://images.unsplash.com/photo-1511795409834-ef04bbd61622?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2069&q=80",
+  //   alt: "Wedding Venue Visit",
+  //   category: "wedding",
+  //   width: 2,
+  //   height: 2,
+  // },
+  // {
+  //   id: 9,
+  //   src: "https://images.unsplash.com/photo-1519225421980-715cb0215aed?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80",
+  //   alt: "Dress Shopping",
+  //   category: "wedding",
+  //   width: 1,
+  //   height: 1,
+  // },
   {
     id: 10,
     src: "https://res.cloudinary.com/dwozuizmv/image/upload/v1750772003/WhatsApp_Image_2025-06-24_at_2.27.05_PM_1_zsxxao.jpg",
@@ -95,14 +95,14 @@ const galleryImages = [
     width: 1,
     height: 1,
   },
-  {
-    id: 12,
-    src: "https://images.unsplash.com/photo-1511795409834-ef04bbd61622?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2069&q=80",
-    alt: "Wedding Rehearsal",
-    category: "wedding",
-    width: 1,
-    height: 1,
-  },
+  // {
+  //   id: 12,
+  //   src: "https://images.unsplash.com/photo-1511795409834-ef04bbd61622?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2069&q=80",
+  //   alt: "Wedding Rehearsal",
+  //   category: "wedding",
+  //   width: 1,
+  //   height: 1,
+  // },
   {
     id: 13,
     src: "https://res.cloudinary.com/dwozuizmv/image/upload/v1750764851/WhatsApp_Image_2025-06-24_at_12.28.08_PM_j4pgai.jpg",
@@ -197,16 +197,24 @@ const galleryImages = [
     width: 1,
     height: 1,
   },
+  {
+    id: 24,
+    src: "https://res.cloudinary.com/dwozuizmv/image/upload/v1750773547/WhatsApp_Image_2025-06-24_at_2.48.41_PM_zailfl.jpg",
+    alt: "Engagement",
+    category: "engagement",
+    width: 1,
+    height: 1,
+  },
 ];
 
 const categories = [
   { id: "all", name: "All Photos" },
   { id: "engagement", name: "Engagement" },
   { id: "dating", name: "Dating" },
-  { id: "travel", name: "Travel" },
-  { id: "wedding", name: "Wedding" },
-  { id: "family", name: "Family" },
   { id: "celebration", name: "Celebration" },
+  { id: "wedding", name: "Wedding" },
+  { id: "travel", name: "Travel" },
+  { id: "family", name: "Family" },
 ];
 
 export default function GalleryPage() {
@@ -387,76 +395,99 @@ export default function GalleryPage() {
       {/* Gallery Grid */}
       <section className={styles.gallerySection}>
         <div className={styles.container}>
-          <motion.div className={styles.galleryGrid} layout>
-            {filteredImages.map((image, index) => (
-              <motion.div
-                key={image.id}
-                layout
-                initial={{ opacity: 0, scale: 0.8 }}
-                animate={{ opacity: 1, scale: 1 }}
-                transition={{ duration: 0.5, delay: index * 0.1 }}
-                className={`${styles.galleryItem} ${
-                  styles[`span${image.width}`]
-                } ${styles[`span${image.height}`]}`}
-                onClick={() => openLightbox(image)}
-              >
-                <div className={styles.imageContainer}>
-                  {image.video ? (
-                    <div className={styles.videoContainer}>
-                      {videoThumbnails[image.id] ? (
-                        <div
-                          className={styles.videoThumbnail}
-                          style={{
-                            backgroundImage: `url(${
-                              videoThumbnails[image.id]
-                            })`,
+          {filteredImages.length > 0 ? (
+            <motion.div className={styles.galleryGrid} layout>
+              {filteredImages.map((image, index) => (
+                <motion.div
+                  key={image.id}
+                  layout
+                  initial={{ opacity: 0, scale: 0.8 }}
+                  animate={{ opacity: 1, scale: 1 }}
+                  transition={{ duration: 0.5, delay: index * 0.1 }}
+                  className={`${styles.galleryItem} ${
+                    styles[`span${image.width}`]
+                  } ${styles[`span${image.height}`]}`}
+                  onClick={() => openLightbox(image)}
+                >
+                  <div className={styles.imageContainer}>
+                    {image.video ? (
+                      <div className={styles.videoContainer}>
+                        {videoThumbnails[image.id] ? (
+                          <div
+                            className={styles.videoThumbnail}
+                            style={{
+                              backgroundImage: `url(${
+                                videoThumbnails[image.id]
+                              })`,
+                            }}
+                          />
+                        ) : (
+                          <div className={styles.videoThumbnailPlaceholder}>
+                            <span>Loading...</span>
+                          </div>
+                        )}
+                        <video
+                          src={image.src}
+                          className={styles.hiddenVideo}
+                          muted
+                          loop
+                          onMouseEnter={(e) => {
+                            const video = e.currentTarget as HTMLVideoElement;
+                            video.play();
+                          }}
+                          onMouseLeave={(e) => {
+                            const video = e.currentTarget as HTMLVideoElement;
+                            video.pause();
+                            video.currentTime = 0;
                           }}
                         />
-                      ) : (
-                        <div className={styles.videoThumbnailPlaceholder}>
-                          <span>Loading...</span>
+                        <div className={styles.playButton}>
+                          <span>▶</span>
                         </div>
-                      )}
-                      <video
-                        src={image.src}
-                        className={styles.hiddenVideo}
-                        muted
-                        loop
-                        onMouseEnter={(e) => {
-                          const video = e.currentTarget as HTMLVideoElement;
-                          video.play();
-                        }}
-                        onMouseLeave={(e) => {
-                          const video = e.currentTarget as HTMLVideoElement;
-                          video.pause();
-                          video.currentTime = 0;
-                        }}
+                      </div>
+                    ) : (
+                      <div
+                        className={styles.imageBackground}
+                        style={{ backgroundImage: `url(${image.src})` }}
                       />
-                      <div className={styles.playButton}>
-                        <span>▶</span>
+                    )}
+                    <div className={styles.imageOverlay}>
+                      <div className={styles.imageInfo}>
+                        <h3>{image.alt}</h3>
+                        <p>
+                          {
+                            categories.find((cat) => cat.id === image.category)
+                              ?.name
+                          }
+                        </p>
                       </div>
                     </div>
-                  ) : (
-                    <div
-                      className={styles.imageBackground}
-                      style={{ backgroundImage: `url(${image.src})` }}
-                    />
-                  )}
-                  <div className={styles.imageOverlay}>
-                    <div className={styles.imageInfo}>
-                      <h3>{image.alt}</h3>
-                      <p>
-                        {
-                          categories.find((cat) => cat.id === image.category)
-                            ?.name
-                        }
-                      </p>
-                    </div>
                   </div>
-                </div>
-              </motion.div>
-            ))}
-          </motion.div>
+                </motion.div>
+              ))}
+            </motion.div>
+          ) : (
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8 }}
+              className={styles.comingSoon}
+            >
+              <div className={styles.comingSoonContent}>
+                <h2>Coming Soon</h2>
+                <p>
+                  More{" "}
+                  {selectedCategory === "all"
+                    ? "memories"
+                    : categories
+                        .find((cat) => cat.id === selectedCategory)
+                        ?.name.toLowerCase()}{" "}
+                  will be added here soon!
+                </p>
+                <div className={styles.comingSoonIcon}>📸</div>
+              </div>
+            </motion.div>
+          )}
         </div>
       </section>
 

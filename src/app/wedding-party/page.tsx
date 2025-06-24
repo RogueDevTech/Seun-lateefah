@@ -1,7 +1,8 @@
 "use client";
 
+import { useState } from "react";
 import Link from "next/link";
-import { motion } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
 import styles from "./page.module.scss";
 
 const bridesmaids = [
@@ -83,6 +84,20 @@ const groomsmen = [
 ];
 
 export default function WeddingPartyPage() {
+  const [selectedMember, setSelectedMember] = useState<
+    (typeof bridesmaids)[0] | (typeof groomsmen)[0] | null
+  >(null);
+
+  const openLightbox = (
+    member: (typeof bridesmaids)[0] | (typeof groomsmen)[0]
+  ) => {
+    setSelectedMember(member);
+  };
+
+  const closeLightbox = () => {
+    setSelectedMember(null);
+  };
+
   return (
     <div className={styles.weddingPartyPage}>
       {/* Navigation */}
@@ -160,12 +175,18 @@ export default function WeddingPartyPage() {
                 viewport={{ once: true }}
                 className={styles.partyMember}
               >
-                <div className={styles.memberImage}>
+                <div
+                  className={styles.memberImage}
+                  onClick={() => openLightbox(bridesmaid)}
+                >
                   <div
                     className={styles.imagePlaceholder}
                     style={{ backgroundImage: `url(${bridesmaid.image})` }}
                   />
                   <div className={styles.roleBadge}>{bridesmaid.role}</div>
+                  <div className={styles.imageOverlay}>
+                    <span>Click to view</span>
+                  </div>
                 </div>
                 <div className={styles.memberInfo}>
                   <h3>{bridesmaid.name}</h3>
@@ -204,12 +225,18 @@ export default function WeddingPartyPage() {
                 viewport={{ once: true }}
                 className={styles.partyMember}
               >
-                <div className={styles.memberImage}>
+                <div
+                  className={styles.memberImage}
+                  onClick={() => openLightbox(groomsman)}
+                >
                   <div
                     className={styles.imagePlaceholder}
                     style={{ backgroundImage: `url(${groomsman.image})` }}
                   />
                   <div className={styles.roleBadge}>{groomsman.role}</div>
+                  <div className={styles.imageOverlay}>
+                    <span>Click to view</span>
+                  </div>
                 </div>
                 <div className={styles.memberInfo}>
                   <h3>{groomsman.name}</h3>
@@ -223,6 +250,47 @@ export default function WeddingPartyPage() {
           </div>
         </div>
       </section>
+
+      {/* Lightbox */}
+      <AnimatePresence>
+        {selectedMember && (
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            className={styles.lightbox}
+            onClick={closeLightbox}
+          >
+            <div
+              className={styles.lightboxContent}
+              onClick={(e) => e.stopPropagation()}
+            >
+              <button className={styles.closeButton} onClick={closeLightbox}>
+                ×
+              </button>
+
+              <div className={styles.lightboxImage}>
+                <div
+                  className={styles.imageDisplay}
+                  style={{ backgroundImage: `url(${selectedMember.image})` }}
+                />
+                <div className={styles.imageCaption}>
+                  <h3>{selectedMember.name}</h3>
+                  <p className={styles.role}>{selectedMember.role}</p>
+                  <p className={styles.relationship}>
+                    {selectedMember.relationship}
+                  </p>
+                  {selectedMember.description && (
+                    <p className={styles.description}>
+                      {selectedMember.description}
+                    </p>
+                  )}
+                </div>
+              </div>
+            </div>
+          </motion.div>
+        )}
+      </AnimatePresence>
 
       {/* Call to Action */}
       <section className={styles.ctaSection}>
