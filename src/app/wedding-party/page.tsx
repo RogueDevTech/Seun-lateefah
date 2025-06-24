@@ -8,39 +8,48 @@ import styles from "./page.module.scss";
 const bridesmaids = [
   {
     id: 1,
-    name: "Sarah Johnson",
-    role: "Maid of Honor",
+    name: "Sa’adah Umar Farouq",
+    role: "Bridesmaid",
     image:
-      "https://images.unsplash.com/photo-1494790108755-2616b612b786?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=687&q=80",
-    relationship: "Sister of the Bride",
-    description: "My dearest sister and best friend since childhood.",
+      "https://res.cloudinary.com/dwozuizmv/image/upload/v1750776733/Screenshot_2025-06-24_at_3.47.04_PM_bpaiob.png",
+    relationship: "Friend",
+    description: "",
   },
   {
     id: 2,
-    name: "Emily Chen",
+    name: "Ameenah",
     role: "Bridesmaid",
     image:
-      "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80",
-    relationship: "College Roommate",
-    description: "The one who kept me sane during all-night study sessions.",
+      "https://res.cloudinary.com/dwozuizmv/image/upload/v1750776662/Screenshot_2025-06-24_at_3.48.26_PM_yhnxdo.png",
+    relationship: "Friend",
+    description: "",
   },
   {
     id: 3,
-    name: "Maria Rodriguez",
+    name: "Sa’adah Yahaya",
     role: "Bridesmaid",
     image:
-      "https://images.unsplash.com/photo-1544005313-94ddf0286df2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=688&q=80",
+      "https://res.cloudinary.com/dwozuizmv/image/upload/v1750776734/Screenshot_2025-06-24_at_3.48.11_PM_nxu1jt.png",
     relationship: "Childhood Friend",
     description: "We've been inseparable since we were five years old.",
   },
   {
     id: 4,
-    name: "Jessica Kim",
+    name: "Aisha Zubair",
     role: "Bridesmaid",
     image:
-      "https://images.unsplash.com/photo-1534528741775-53994a69daeb?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=764&q=80",
-    relationship: "Work Colleague",
-    description: "The friend who makes every workday feel like a party.",
+      "https://res.cloudinary.com/dwozuizmv/image/upload/v1750776648/Screenshot_2025-06-24_at_3.47.52_PM_ohwino.png",
+    relationship: "Friend",
+    description: "",
+  },
+  {
+    id: 5,
+    name: "Comfort Onekata",
+    role: "Bridesmaid",
+    image:
+      "https://res.cloudinary.com/dwozuizmv/image/upload/v1750776647/Screenshot_2025-06-24_at_3.47.33_PM_qmge6q.png",
+    relationship: "Friend",
+    description: "",
   },
 ];
 
@@ -50,36 +59,45 @@ const groomsmen = [
     name: "Tosin Yusuf",
     role: "Groomsman",
     image:
-      "https://res.cloudinary.com/dwozuizmv/image/upload/v1750772875/WhatsApp_Image_2025-06-24_at_2.34.20_PM_x1iums.jpg",
+      "https://res.cloudinary.com/dwozuizmv/image/upload/v1750776755/Screenshot_2025-06-24_at_3.51.39_PM_nu5d6f.png",
     relationship: "Brother of the Groom",
-    description: "My brother and partner in crime since day one.",
+    description: "",
   },
   {
     id: 2,
-    name: "David Wilson",
+    name: "Habeeb Abdulazeez",
     role: "Groomsman",
     image:
-      "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80",
+      "https://res.cloudinary.com/dwozuizmv/image/upload/v1750776755/Screenshot_2025-06-24_at_3.51.19_PM_ahrdap.png",
     relationship: "College Friend",
     description: "",
   },
   {
     id: 3,
-    name: "James Brown",
+    name: "Mubarak Shittu",
     role: "Groomsman",
     image:
-      "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=687&q=80",
-    relationship: "Childhood Friend",
-    description: "We've been through everything together since kindergarten.",
+      "https://res.cloudinary.com/dwozuizmv/image/upload/v1750777421/Screenshot_2025-06-24_at_4.03.14_PM_yg3yqi.png",
+    relationship: "College Friend",
+    description: "",
   },
   {
     id: 4,
-    name: "Robert Davis",
+    name: "Olaoluwa Yusuf",
     role: "Groomsman",
     image:
-      "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=687&q=80",
-    relationship: "Work Friend",
-    description: "The colleague who became family over coffee breaks.",
+      "https://res.cloudinary.com/dwozuizmv/image/upload/v1750776761/Screenshot_2025-06-24_at_3.50.59_PM_w4harc.png",
+    relationship: "Brother",
+    description: "",
+  },
+  {
+    id: 5,
+    name: "Kabir Mohammed",
+    role: "Groomsman",
+    image:
+      "https://res.cloudinary.com/dwozuizmv/image/upload/v1750772001/WhatsApp_Image_2025-06-24_at_2.26.20_PM_my4gq6.jpg",
+    relationship: "College Friend",
+    description: "",
   },
 ];
 

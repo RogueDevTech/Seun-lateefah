@@ -451,3 +451,132 @@
     display: none !important;
   }
 }
+
+// Lightbox
+.lightbox {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.9);
+  z-index: 2000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+
+  .lightboxContent {
+    position: relative;
+    max-width: 90vw;
+    max-height: 90vh;
+    background: white;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+
+    .closeButton {
+      position: absolute;
+      top: 1rem;
+      right: 1rem;
+      background: rgba(0, 0, 0, 0.5);
+      color: white;
+      border: none;
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      font-size: 1.5rem;
+      cursor: pointer;
+      z-index: 10;
+      transition: all 0.3s ease;
+
+      &:hover {
+        background: rgba(0, 0, 0, 0.8);
+        transform: scale(1.1);
+      }
+    }
+
+    .lightboxImage {
+      .imageDisplay {
+        width: 100%;
+        height: 60vh;
+        background-size: contain;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-color: #f8f9fa;
+        margin: 0 auto;
+      }
+
+      .imageCaption {
+        padding: 2rem;
+        text-align: center;
+
+        h3 {
+          font-family: "Playfair Display", serif;
+          font-size: 2rem;
+          font-weight: 600;
+          color: #2c3e50;
+          margin-bottom: 0.5rem;
+        }
+
+        .role {
+          font-size: 1rem;
+          color: #000000;
+          font-weight: 600;
+          text-transform: uppercase;
+          letter-spacing: 0.5px;
+          margin-bottom: 0.5rem;
+        }
+
+        .relationship {
+          font-size: 1.1rem;
+          color: #7f8c8d;
+          font-weight: 500;
+          margin-bottom: 1rem;
+        }
+
+        .description {
+          font-size: 1rem;
+          color: #7f8c8d;
+          line-height: 1.6;
+          max-width: 500px;
+          margin: 0 auto;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .lightbox {
+    padding: 1rem;
+
+    .lightboxContent {
+      .lightboxImage {
+        .imageDisplay {
+          height: 40vh;
+        }
+
+        .imageCaption {
+          padding: 1.5rem;
+
+          h3 {
+            font-size: 1.5rem;
+          }
+
+          .role {
+            font-size: 0.9rem;
+          }
+
+          .relationship {
+            font-size: 1rem;
+          }
+
+          .description {
+            font-size: 0.9rem;
+          }
+        }
+      }
+    }
+  }
+}
