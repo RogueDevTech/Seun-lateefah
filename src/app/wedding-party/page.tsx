@@ -38,7 +38,7 @@ const bridesmaids = [
     name: "Aisha Zubair",
     role: "Bridesmaid",
     image:
-      "https://res.cloudinary.com/dwozuizmv/image/upload/v1750776648/Screenshot_2025-06-24_at_3.47.52_PM_ohwino.png",
+      "https://res.cloudinary.com/dwozuizmv/image/upload/v1750891831/Screenshot_2025-06-25_at_11.50.10_PM_hecfe1.png",
     relationship: "Friend",
     description: "",
   },
@@ -113,7 +113,7 @@ const groomsmen = [
     name: "Mubarak Shittu",
     role: "Groomsman",
     image:
-      "https://res.cloudinary.com/dwozuizmv/image/upload/v1750777421/Screenshot_2025-06-24_at_4.03.14_PM_yg3yqi.png",
+      "https://res.cloudinary.com/dwozuizmv/image/upload/v1750891473/WhatsApp_Image_2025-06-25_at_11.40.52_PM_azxg25.jpg",
     relationship: "College Friend",
     description: "",
   },
@@ -141,15 +141,6 @@ const groomsmen = [
     role: "Groomsman",
     image:
       "https://res.cloudinary.com/dpy9rwwub/image/upload/v1750797795/taiwo_oyw3qv.jpg",
-    relationship: "College Friend",
-    description: "",
-  },
-  {
-    id: 7,
-    name: "Ayodele Akindele",
-    role: "Groomsman",
-    image:
-      "https://res.cloudinary.com/dpy9rwwub/image/upload/v1750798187/ayodele_cgvra9.jpg",
     relationship: "College Friend",
     description: "",
   },
