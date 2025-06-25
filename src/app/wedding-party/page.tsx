@@ -162,6 +162,15 @@ const groomsmen = [
     relationship: "College Friend",
     description: "",
   },
+  {
+    id: 9,
+    name: "Emmanuel Dada",
+    role: "Groomsman",
+    image:
+      "https://res.cloudinary.com/dpy9rwwub/image/upload/v1750861907/dada_zxicqk.jpg",
+    relationship: "College Friend",
+    description: "",
+  },
 ];
 
 export default function WeddingPartyPage() {

@@ -143,7 +143,7 @@ export default function WeddingHomePage() {
               <div className={styles.storyText}>
                 <p className={styles.flag}>🇳🇬</p>
                 <p>
-                  It all started at a WhatsApp Status upload (Believe it or
+                  It all started with a WhatsApp Status upload (Believe it or
                   not😅)... now we&apos;re saying YES to forever 🎓❤
                 </p>
                 <p>
@@ -158,8 +158,8 @@ export default function WeddingHomePage() {
                   From that point on, we shared countless adventures, travels,
                   graduation, career progression 🎉 e.t.c together. Three years
                   later, on December 20th, 2024, we got engaged. It was a
-                  romantic evening witnessed by Family and Friends. Now, we&apos;re
-                  excited to take the next step and begin our forever
+                  romantic evening witnessed by Family and Friends. Now,
+                  we&apos;re excited to take the next step and begin our forever
                   together—and we would be honored to have you
                   celebrate with us.
                 </p>
