@@ -162,6 +162,15 @@ const groomsmen = [
     relationship: "College Friend",
     description: "",
   },
+  {
+    id: 10,
+    name: "Fowomola Jamiu",
+    role: "Groomsman",
+    image:
+      "https://res.cloudinary.com/dwozuizmv/image/upload/v1750892309/WhatsApp_Image_2025-06-25_at_11.56.44_PM_tktr7x.jpg",
+    relationship: "College Friend",
+    description: "",
+  },
 ];
 
 export default function WeddingPartyPage() {
