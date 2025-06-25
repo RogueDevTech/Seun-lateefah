@@ -60,6 +60,33 @@ const bridesmaids = [
     relationship: "Friend",
     description: "",
   },
+  {
+    id: 7,
+    name: "Rahma",
+    role: "Bridesmaid",
+    image:
+      "https://res.cloudinary.com/dpy9rwwub/image/upload/v1750839960/Rahma_gtjduz.jpg",
+    relationship: "Friend",
+    description: "",
+  },
+  {
+    id: 8,
+    name: "Husseina",
+    role: "Bridesmaid",
+    image:
+      "https://res.cloudinary.com/dpy9rwwub/image/upload/v1750839946/Husseina_wzpehx.jpg",
+    relationship: "Friend",
+    description: "",
+  },
+  {
+    id: 9,
+    name: "Fateemah",
+    role: "Bridesmaid",
+    image:
+      "https://res.cloudinary.com/dpy9rwwub/image/upload/v1750840007/fateemah_fyhq2p.jpg",
+    relationship: "Friend",
+    description: "",
+  },
 ];
 
 const groomsmen = [

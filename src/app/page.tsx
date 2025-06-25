@@ -143,25 +143,25 @@ export default function WeddingHomePage() {
               <div className={styles.storyText}>
                 <p className={styles.flag}>🇳🇬</p>
                 <p>
-                  It all started at a graduation party... now we&apos;re
-                  graduating to forever 🎓❤️
+                  It all started at a WhatsApp Status upload (Believe it or
+                  not😅)... now we&apos;re saying YES to forever 🎓❤
                 </p>
                 <p>
-                  Our journey began when we met at a mutual friend&apos;s
-                  graduation party on campus. Though we didn&apos;t know each
-                  other at the time, that day changed everything. He approached
-                  me, and we spent the evening talking and dancing. A few days
-                  later, we went on our first date—bowling—and it quickly became
-                  clear that we had a special connection.
+                  Our journey began when we met at an inlaw / friend&apos;s child
+                  dedication party in Ilorin. Though we&apos;ve been exchanging
+                  messages and occasional calls at this point in time, that day
+                  changed everything. We met for the first time and hit it off
+                  instantly, A few days later, we went on our first date and it
+                  quickly became clear that we had a special connection.
                 </p>
                 <p>
-                  From that point on, we shared countless adventures, studied
-                  side by side, and grew together. Three years later, on
-                  September 1st, 2024, we got engaged. It was a romantic evening
-                  in the park by the water, and when he popped the question, I
-                  said yes! Now, we&apos;re excited to take the next step and
-                  begin our forever together—and we would be honored to have you
-                  celebrate with us.
+                  From that point on, we shared countless adventures, travels,
+                  graduation, career progression 🎉 e.t.c together. Three years
+                  later, on December 20th, 2024, we got engaged. It was a
+                  romantic evening witnessed by Family and Friends. Now, we&apos;re
+                  excited to take the next step and begin our forever
+                  together—and we would be honored to have you
+                  celebrate with us.
                 </p>
               </div>
             </div>
