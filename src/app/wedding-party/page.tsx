@@ -87,6 +87,15 @@ const bridesmaids = [
     relationship: "Friend",
     description: "",
   },
+  {
+    id: 10,
+    name: "Busola Yusuf",
+    role: "Bridesmaid",
+    image:
+      "https://res.cloudinary.com/dpy9rwwub/image/upload/v1750935308/Busola__Yusuf_tz2ash.jpg",
+    relationship: "Friend",
+    description: "",
+  },
 ];
 
 const groomsmen = [
