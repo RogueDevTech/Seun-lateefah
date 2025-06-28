@@ -96,6 +96,15 @@ const bridesmaids = [
     relationship: "Friend",
     description: "",
   },
+  {
+    id: 11,
+    name: "Mercy Ohiole",
+    role: "Bridesmaid",
+    image:
+      "https://res.cloudinary.com/dpy9rwwub/image/upload/v1751101051/ohiole_dyw5uy.jpg",
+    relationship: "Friend",
+    description: "",
+  },
 ];
 
 const groomsmen = [
